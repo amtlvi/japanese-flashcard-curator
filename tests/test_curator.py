@@ -46,6 +46,26 @@ class FormatTests(unittest.TestCase):
             cards = curator.decode_transit_map(root["decks"][0])["cards"]
             self.assertEqual([curator.decode_transit_map(c)["pos"] for c in cards], ["000001", "000002"])
 
+    def test_data_archive_metadata_is_deterministic(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "n5"
+            source.mkdir()
+            for name in ("vocabulary.json", "vocabulary.csv", "kanji.json", "kanji.csv", "report.json"):
+                (source / name).write_text(name, encoding="utf-8")
+            old_generated = curator.GENERATED
+            try:
+                curator.GENERATED = root
+                target = root / "data.zip"
+                curator.write_data_archive(target, "N5")
+                first = target.read_bytes()
+                curator.write_data_archive(target, "N5")
+                self.assertEqual(first, target.read_bytes())
+                with zipfile.ZipFile(target) as archive:
+                    self.assertTrue(all(item.date_time == (1980, 1, 1, 0, 0, 0) for item in archive.infolist()))
+            finally:
+                curator.GENERATED = old_generated
+
 
 if __name__ == "__main__":
     unittest.main()

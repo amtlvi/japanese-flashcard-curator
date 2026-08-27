@@ -6,15 +6,15 @@ Reproducible JLPT vocabulary and kanji curation with deterministic Mochi exports
 
 The JLPT publishes skill-level summaries, not an official post-2010 itemized vocabulary or kanji syllabus. This project therefore does **not** label any community list as “the exact official list.” It uses pinned, reviewable community level maps and enriches them from maintained dictionary projects. Every upstream file is locked by commit or release tag and SHA-256 in [`sources.lock.json`](sources.lock.json).
 
-The current checked-in build is JLPT N5:
+Generated files are release assets, not tracked repository content. The latest release contains:
 
 | Artifact | Count | Purpose |
 | --- | ---: | --- |
-| [`dist/jlpt_n5_complete.mochi`](dist/jlpt_n5_complete.mochi) | 718 vocabulary + 79 kanji | Recommended import |
-| [`dist/jlpt_n5_vocabulary.mochi`](dist/jlpt_n5_vocabulary.mochi) | 718 | Vocabulary only |
-| [`dist/jlpt_n5_kanji.mochi`](dist/jlpt_n5_kanji.mochi) | 79 | Kanji only |
-| [`data/generated/n5/vocabulary.json`](data/generated/n5/vocabulary.json) | 718 | Canonical machine-readable records |
-| [`data/generated/n5/kanji.json`](data/generated/n5/kanji.json) | 79 | Canonical machine-readable records |
+| `jlpt_n5_complete.mochi` | 718 vocabulary + 79 kanji | Recommended N5 import |
+| `jlpt_<level>_vocabulary.mochi` | Per-level vocabulary | Vocabulary only |
+| `jlpt_<level>_kanji.mochi` | Per-level kanji | Kanji only |
+| `jlpt_<level>_data.zip` | Canonical JSON/CSV and build report | Machine-readable data |
+| `SHA256SUMS` | Checksums for every release asset | Integrity verification |
 
 The build matched all 718 vocabulary rows to JMdict. Of those, 697 have one or two JMdict sense-linked Tatoeba examples. Missing examples remain explicitly missing rather than being fabricated.
 
@@ -43,6 +43,7 @@ Python 3.11 or newer is the only runtime requirement.
 ```bash
 python3 flashcard_curator.py all --level N5
 python3 flashcard_curator.py verify --level N5
+python3 flashcard_curator.py package --level N5
 python3 -m unittest discover -s tests -v
 ```
 
@@ -59,6 +60,10 @@ The source lock already contains N1–N5 mappings. Intentional spelling aliases 
 Downloads are rejected when their SHA-256 differs from the lock. The builder checks exact source counts, unique IDs, contiguous ordering, raw-example cleanliness, Mochi ZIP/Transit shape, and card positions. Mochi archives use a fixed ZIP timestamp and compact Transit JSON, so identical inputs produce byte-identical packages.
 
 The archives are structurally validated here, but application-level import still depends on Mochi itself.
+
+## Releases
+
+The release workflow rebuilds N1–N5 from pinned inputs, validates every level, packages the canonical data deterministically, and publishes the resulting files as GitHub release assets. `dist/`, `data/generated/`, and `release-artifacts/` are intentionally ignored; a clean clone contains only the curator source, configuration, tests, and documentation.
 
 ## License
 

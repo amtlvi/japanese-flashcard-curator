@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parent
 CACHE = ROOT / ".cache"
 GENERATED = ROOT / "data" / "generated"
 DIST = ROOT / "dist"
+RELEASE = ROOT / "release-artifacts"
 LOCK_PATH = ROOT / "sources.lock.json"
 OVERRIDES_PATH = ROOT / "curation" / "overrides.json"
 LEVELS = ("N5", "N4", "N3", "N2", "N1")
@@ -534,6 +535,42 @@ def write_mochi(path: Path, decks: Sequence[tuple[str, Sequence[str]]]) -> None:
     temporary.replace(path)
 
 
+def write_data_archive(path: Path, level: str) -> None:
+    """Package canonical per-level data with stable names, metadata, and ordering."""
+    level_dir = GENERATED / level.lower()
+    members = ("vocabulary.json", "vocabulary.csv", "kanji.json", "kanji.csv", "report.json")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with zipfile.ZipFile(temporary, "w") as archive:
+        for name in members:
+            info = zipfile.ZipInfo(f"{level.lower()}/{name}", date_time=(1980, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o600 << 16
+            archive.writestr(info, (level_dir / name).read_bytes())
+    temporary.replace(path)
+
+
+def package_release(levels: Sequence[str]) -> list[Path]:
+    RELEASE.mkdir(parents=True, exist_ok=True)
+    artifacts: list[Path] = []
+    for level in levels:
+        verify(level)
+        stem = f"jlpt_{level.lower()}"
+        for suffix in ("vocabulary.mochi", "kanji.mochi", "complete.mochi"):
+            source = DIST / f"{stem}_{suffix}"
+            destination = RELEASE / source.name
+            shutil.copyfile(source, destination)
+            artifacts.append(destination)
+        data_archive = RELEASE / f"{stem}_data.zip"
+        write_data_archive(data_archive, level)
+        artifacts.append(data_archive)
+    artifacts.sort(key=lambda item: item.name)
+    checksums = "".join(f"{sha256(path)}  {path.name}\n" for path in artifacts)
+    checksum_path = RELEASE / "SHA256SUMS"
+    checksum_path.write_text(checksums, encoding="utf-8")
+    return [checksum_path, *artifacts]
+
+
 def write_csv(path: Path, rows: Sequence[dict[str, Any]], fields: Sequence[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
@@ -634,7 +671,7 @@ def build(level: str) -> dict[str, Any]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
-    for command in ("fetch", "build", "all", "verify"):
+    for command in ("fetch", "build", "all", "verify", "package"):
         item = sub.add_parser(command)
         item.add_argument("--level", action="append", choices=LEVELS, default=[])
     return parser.parse_args()
@@ -650,6 +687,9 @@ def main() -> int:
         print(json_dump(reports), end="")
     if args.command == "verify":
         print(json_dump([verify(level) for level in levels]), end="")
+    if args.command == "package":
+        paths = package_release(levels)
+        print(json_dump([{"file": path.name, "sha256": sha256(path), "bytes": path.stat().st_size} for path in paths]), end="")
     return 0
 
 
