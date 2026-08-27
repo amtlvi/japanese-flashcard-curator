@@ -1,0 +1,12 @@
+[project]
+name = "flashcard-curator"
+version = "0.1.0"
+description = "Reproducible JLPT flashcard curation and Mochi export"
+requires-python = ">=3.11"
+
+[project.scripts]
+flashcard-curator = "flashcard_curator:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+

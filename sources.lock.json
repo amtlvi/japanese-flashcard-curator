@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "level_maps": {
+    "vocabulary": {
+      "name": "Open Anki JLPT Decks",
+      "repository": "jamsinclair/open-anki-jlpt-decks",
+      "commit": "1ad66734417aca9dbcca6b2d5ee440cb13ab3ba0",
+      "license": "MIT (list normalization); derived from Jonathan Waller/Tanos CC BY",
+      "files": {
+        "N1": {"path": "src/n1.csv", "rows": 2699, "sha256": "120911636c019899552aa6d7bd64b036ecef4bedfe272a744f75735c46aae5cd"},
+        "N2": {"path": "src/n2.csv", "rows": 1906, "sha256": "2d0f1ddd6222881cd9fc2ca701db74300af99b3f1f84d5ac3c18411c20f0c055"},
+        "N3": {"path": "src/n3.csv", "rows": 2140, "sha256": "ba071571d344e60b0e1fd11cd2e98a6aaa04515361653ca45147129460531297"},
+        "N4": {"path": "src/n4.csv", "rows": 668, "sha256": "0e835f40a8d2a1f191d7aa499076002756fa099b95634758376f43c73793e9f6"},
+        "N5": {"path": "src/n5.csv", "rows": 718, "sha256": "f89abc86b391c4f2b551bbf8910b0de6cd600973b3a9f8d98347513921929ebe"}
+      }
+    },
+    "kanji": {
+      "name": "JLPT_Vocabulary",
+      "repository": "Bluskyo/JLPT_Vocabulary",
+      "commit": "4358f932937ad0232194a36e9f4f875094910c6b",
+      "license": "Jonathan Waller/Tanos CC BY; parser code MIT",
+      "files": {
+        "N1": {"path": "data/kanji/parsedData/n1_kanji.csv", "rows": 1232, "sha256": "ae0e4f451f4eae702c5d99d112e6910250a59568101a2639b9e574536d8d98ee"},
+        "N2": {"path": "data/kanji/parsedData/n2_kanji.csv", "rows": 367, "sha256": "3678f64b6bccaca53686f31e9c2e4825e85ef5173d2312c134008dfcfa824f95"},
+        "N3": {"path": "data/kanji/parsedData/n3_kanji.csv", "rows": 367, "sha256": "f32b1ac7e02efcbf29c46e9dfb75bdac9526254ed448b245d4cc3915410754ef"},
+        "N4": {"path": "data/kanji/parsedData/n4_kanji.csv", "rows": 166, "sha256": "42a8993084e741d6885147f181a886a5e2d515e137a8433cbf2820f8c5086a1c"},
+        "N5": {"path": "data/kanji/parsedData/n5_kanji.csv", "rows": 79, "sha256": "eb0b1f3c077f62b325a096562461bae6c5d4fb21015637210a3a3ef91713e651"}
+      }
+    }
+  },
+  "dictionary_release": {
+    "name": "jmdict-simplified",
+    "repository": "scriptin/jmdict-simplified",
+    "tag": "3.6.2+20260824122934",
+    "dict_date": "2026-08-24",
+    "license": "EDRDG / CC BY-SA 4.0; examples from Tatoeba CC BY 2.0 FR",
+    "assets": {
+      "jmdict_examples": {
+        "file": "jmdict-examples-eng-3.6.2+20260824122934.json.zip",
+        "sha256": "8e9a6bffd7003a01c561396fe8872ff88b37b93f0c2439e563a6cc6ece5d5d2c"
+      },
+      "kanjidic2": {
+        "file": "kanjidic2-en-3.6.2+20260824122934.json.zip",
+        "sha256": "4bc032576568175cb6357184e13bcb1f7d35cdb8f6f12e5741b90fba8f0ade22"
+      },
+      "kradfile": {
+        "file": "kradfile-3.6.2+20260824122934.json.zip",
+        "sha256": "9d566903149fc27a2e3c6d18db1a5aee2255c9566744e02936aa34c97b04a6ec"
+      }
+    }
+  }
+}

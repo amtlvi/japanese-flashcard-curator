@@ -1,0 +1,6429 @@
+[
+  {
+    "id": "n5-kanji-0001",
+    "level": "N5",
+    "order": 1,
+    "source_order": 1,
+    "character": "日",
+    "meanings": [
+      "day",
+      "sun",
+      "Japan",
+      "counter for days"
+    ],
+    "readings": {
+      "onyomi": [
+        "ニチ",
+        "ジツ"
+      ],
+      "kunyomi": [
+        "ひ",
+        "-び",
+        "-か"
+      ],
+      "nanori": [
+        "あ",
+        "あき",
+        "いる",
+        "く",
+        "くさ",
+        "こう",
+        "す",
+        "たち",
+        "に",
+        "にっ",
+        "につ",
+        "へ"
+      ]
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 1,
+    "classical_radical_numbers": [
+      72
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "明日",
+        "written_furigana": "{明日}(あした)",
+        "reading": "あした",
+        "meanings": [
+          "tomorrow"
+        ]
+      },
+      {
+        "written_raw": "今日",
+        "written_furigana": "{今日}(きょう)",
+        "reading": "きょう",
+        "meanings": [
+          "today",
+          "this day"
+        ]
+      },
+      {
+        "written_raw": "土曜日",
+        "written_furigana": "{土曜日}(どようび)",
+        "reading": "どようび",
+        "meanings": [
+          "Saturday"
+        ]
+      },
+      {
+        "written_raw": "日曜日",
+        "written_furigana": "{日曜日}(にちようび)",
+        "reading": "にちようび",
+        "meanings": [
+          "Sunday"
+        ]
+      },
+      {
+        "written_raw": "毎日",
+        "written_furigana": "{毎日}(まいにち)",
+        "reading": "まいにち",
+        "meanings": [
+          "every day"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0002",
+    "level": "N5",
+    "order": 2,
+    "source_order": 2,
+    "character": "一",
+    "meanings": [
+      "one",
+      "one radical (no.1)"
+    ],
+    "readings": {
+      "onyomi": [
+        "イチ",
+        "イツ"
+      ],
+      "kunyomi": [
+        "ひと-",
+        "ひと.つ"
+      ],
+      "nanori": [
+        "かず",
+        "い",
+        "いっ",
+        "いる",
+        "かつ",
+        "かづ",
+        "てん",
+        "はじめ",
+        "ひ",
+        "ひとつ",
+        "まこと"
+      ]
+    },
+    "strokes": 1,
+    "grade": 1,
+    "frequency_rank": 2,
+    "classical_radical_numbers": [
+      1
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "一人",
+        "written_furigana": "{一人}(ひとり)",
+        "reading": "ひとり",
+        "meanings": [
+          "one person"
+        ]
+      },
+      {
+        "written_raw": "一つ",
+        "written_furigana": "{一}(ひと)つ",
+        "reading": "ひとつ",
+        "meanings": [
+          "one thing"
+        ]
+      },
+      {
+        "written_raw": "一番",
+        "written_furigana": "{一番}(いちばん)",
+        "reading": "いちばん",
+        "meanings": [
+          "best (most)",
+          "first",
+          "number one"
+        ]
+      },
+      {
+        "written_raw": "一日",
+        "written_furigana": "{一日}(いちにち)",
+        "reading": "いちにち",
+        "meanings": [
+          "one day (duration)"
+        ]
+      },
+      {
+        "written_raw": "一昨日",
+        "written_furigana": "{一昨日}(おととい)",
+        "reading": "おととい",
+        "meanings": [
+          "the day before yesterday"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0003",
+    "level": "N5",
+    "order": 3,
+    "source_order": 3,
+    "character": "国",
+    "meanings": [
+      "country"
+    ],
+    "readings": {
+      "onyomi": [
+        "コク"
+      ],
+      "kunyomi": [
+        "くに"
+      ],
+      "nanori": [
+        "くな",
+        "こ"
+      ]
+    },
+    "strokes": 8,
+    "grade": 2,
+    "frequency_rank": 3,
+    "classical_radical_numbers": [
+      31
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "王",
+        "meanings": [
+          "king",
+          "rule",
+          "magnate"
+        ]
+      },
+      {
+        "symbol": "囗",
+        "meanings": [
+          "box",
+          "box or enclosure radical (no. 31)"
+        ]
+      },
+      {
+        "symbol": "丶",
+        "meanings": [
+          "dot",
+          "tick or dot radical (no. 3)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "国",
+        "written_furigana": "{国}(くに)",
+        "reading": "くに",
+        "meanings": [
+          "country",
+          "place of origin"
+        ]
+      },
+      {
+        "written_raw": "外国",
+        "written_furigana": "{外国}(がいこく)",
+        "reading": "がいこく",
+        "meanings": [
+          "foreign country",
+          "abroad"
+        ]
+      },
+      {
+        "written_raw": "外国人",
+        "written_furigana": "{外国人}(がいこくじん)",
+        "reading": "がいこくじん",
+        "meanings": [
+          "foreigner"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0004",
+    "level": "N5",
+    "order": 4,
+    "source_order": 4,
+    "character": "人",
+    "meanings": [
+      "person"
+    ],
+    "readings": {
+      "onyomi": [
+        "ジン",
+        "ニン"
+      ],
+      "kunyomi": [
+        "ひと",
+        "-り",
+        "-と"
+      ],
+      "nanori": [
+        "じ",
+        "と",
+        "ね",
+        "ひこ",
+        "ふみ"
+      ]
+    },
+    "strokes": 2,
+    "grade": 1,
+    "frequency_rank": 5,
+    "classical_radical_numbers": [
+      9
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "人",
+        "written_furigana": "{人}(ひと)",
+        "reading": "ひと",
+        "meanings": [
+          "man",
+          "person"
+        ]
+      },
+      {
+        "written_raw": "一人",
+        "written_furigana": "{一人}(ひとり)",
+        "reading": "ひとり",
+        "meanings": [
+          "one person"
+        ]
+      },
+      {
+        "written_raw": "二人",
+        "written_furigana": "{二人}(ふたり)",
+        "reading": "ふたり",
+        "meanings": [
+          "two people"
+        ]
+      },
+      {
+        "written_raw": "大人",
+        "written_furigana": "{大人}(おとな)",
+        "reading": "おとな",
+        "meanings": [
+          "adult"
+        ]
+      },
+      {
+        "written_raw": "外国人",
+        "written_furigana": "{外国人}(がいこくじん)",
+        "reading": "がいこくじん",
+        "meanings": [
+          "foreigner"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0005",
+    "level": "N5",
+    "order": 5,
+    "source_order": 5,
+    "character": "年",
+    "meanings": [
+      "year",
+      "counter for years"
+    ],
+    "readings": {
+      "onyomi": [
+        "ネン"
+      ],
+      "kunyomi": [
+        "とし"
+      ],
+      "nanori": [
+        "ね"
+      ]
+    },
+    "strokes": 6,
+    "grade": 1,
+    "frequency_rank": 6,
+    "classical_radical_numbers": [
+      51
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "ノ",
+        "meanings": []
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "干",
+        "meanings": [
+          "dry",
+          "parch",
+          "ebb"
+        ]
+      },
+      {
+        "symbol": "乞",
+        "meanings": [
+          "beg",
+          "invite",
+          "ask"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "来年",
+        "written_furigana": "{来年}(らいねん)",
+        "reading": "らいねん",
+        "meanings": [
+          "next year"
+        ]
+      },
+      {
+        "written_raw": "今年",
+        "written_furigana": "{今年}(ことし)",
+        "reading": "ことし",
+        "meanings": [
+          "this year"
+        ]
+      },
+      {
+        "written_raw": "去年",
+        "written_furigana": "{去年}(きょねん)",
+        "reading": "きょねん",
+        "meanings": [
+          "last year"
+        ]
+      },
+      {
+        "written_raw": "さ来年",
+        "written_furigana": "さ{来年}(らいねん)",
+        "reading": "さらいねん",
+        "meanings": [
+          "year after next"
+        ]
+      },
+      {
+        "written_raw": "年",
+        "written_furigana": "{年}(とし)",
+        "reading": "とし",
+        "meanings": [
+          "year",
+          "age"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0006",
+    "level": "N5",
+    "order": 6,
+    "source_order": 6,
+    "character": "大",
+    "meanings": [
+      "large",
+      "big"
+    ],
+    "readings": {
+      "onyomi": [
+        "ダイ",
+        "タイ"
+      ],
+      "kunyomi": [
+        "おお-",
+        "おお.きい",
+        "-おお.いに"
+      ],
+      "nanori": [
+        "うふ",
+        "お",
+        "おう",
+        "た",
+        "たかし",
+        "とも",
+        "はじめ",
+        "ひろ",
+        "ひろし",
+        "まさ",
+        "まさる",
+        "もと",
+        "わ"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 7,
+    "classical_radical_numbers": [
+      37
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "大学",
+        "written_furigana": "{大学}(だいがく)",
+        "reading": "だいがく",
+        "meanings": [
+          "college",
+          "university"
+        ]
+      },
+      {
+        "written_raw": "大きい",
+        "written_furigana": "{大}(おお)きい",
+        "reading": "おおきい",
+        "meanings": [
+          "big",
+          "large"
+        ]
+      },
+      {
+        "written_raw": "大丈夫",
+        "written_furigana": "{大丈夫}(だいじょうぶ)",
+        "reading": "だいじょうぶ",
+        "meanings": [
+          "It's ok (all right)",
+          "No need to worry",
+          "Everything is under control"
+        ]
+      },
+      {
+        "written_raw": "大人",
+        "written_furigana": "{大人}(おとな)",
+        "reading": "おとな",
+        "meanings": [
+          "adult"
+        ]
+      },
+      {
+        "written_raw": "大きな",
+        "written_furigana": "{大}(おお)きな",
+        "reading": "おおきな",
+        "meanings": [
+          "big"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0007",
+    "level": "N5",
+    "order": 7,
+    "source_order": 7,
+    "character": "十",
+    "meanings": [
+      "ten"
+    ],
+    "readings": {
+      "onyomi": [
+        "ジュウ",
+        "ジッ",
+        "ジュッ"
+      ],
+      "kunyomi": [
+        "とお",
+        "と",
+        "そ"
+      ],
+      "nanori": [
+        "い",
+        "か",
+        "ぎ",
+        "さ",
+        "し",
+        "そう",
+        "ち",
+        "とう",
+        "ね",
+        "ま",
+        "る",
+        "わ"
+      ]
+    },
+    "strokes": 2,
+    "grade": 1,
+    "frequency_rank": 8,
+    "classical_radical_numbers": [
+      24
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "十",
+        "written_furigana": "{十}(とお)",
+        "reading": "とお",
+        "meanings": [
+          "ten (~)"
+        ]
+      },
+      {
+        "written_raw": "十日",
+        "written_furigana": "{十日}(とおか)",
+        "reading": "とおか",
+        "meanings": [
+          "ten days",
+          "tenth day of the month"
+        ]
+      },
+      {
+        "written_raw": "十",
+        "written_furigana": "{十}(じゅう)",
+        "reading": "じゅう",
+        "meanings": [
+          "ten"
+        ]
+      },
+      {
+        "written_raw": "二十歳",
+        "written_furigana": "{二十歳}(はたち)",
+        "reading": "はたち",
+        "meanings": [
+          "20 years old"
+        ]
+      },
+      {
+        "written_raw": "二十日",
+        "written_furigana": "{二十日}(はつか)",
+        "reading": "はつか",
+        "meanings": [
+          "twenty days",
+          "twentieth (day of the month)"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0008",
+    "level": "N5",
+    "order": 8,
+    "source_order": 8,
+    "character": "二",
+    "meanings": [
+      "two",
+      "two radical (no. 7)"
+    ],
+    "readings": {
+      "onyomi": [
+        "ニ",
+        "ジ"
+      ],
+      "kunyomi": [
+        "ふた",
+        "ふた.つ",
+        "ふたたび"
+      ],
+      "nanori": [
+        "おと",
+        "つぐ",
+        "つぎ",
+        "にい",
+        "は",
+        "ふ",
+        "ふたつ",
+        "ふだ",
+        "わ"
+      ]
+    },
+    "strokes": 2,
+    "grade": 1,
+    "frequency_rank": 9,
+    "classical_radical_numbers": [
+      7
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "二人",
+        "written_furigana": "{二人}(ふたり)",
+        "reading": "ふたり",
+        "meanings": [
+          "two people"
+        ]
+      },
+      {
+        "written_raw": "二つ",
+        "written_furigana": "{二}(ふた)つ",
+        "reading": "ふたつ",
+        "meanings": [
+          "two things"
+        ]
+      },
+      {
+        "written_raw": "二日",
+        "written_furigana": "{二日}(ふつか)",
+        "reading": "ふつか",
+        "meanings": [
+          "two days",
+          "second day of the month"
+        ]
+      },
+      {
+        "written_raw": "二",
+        "written_furigana": "{二}(に)",
+        "reading": "に",
+        "meanings": [
+          "two"
+        ]
+      },
+      {
+        "written_raw": "二十歳",
+        "written_furigana": "{二十歳}(はたち)",
+        "reading": "はたち",
+        "meanings": [
+          "20 years old"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0009",
+    "level": "N5",
+    "order": 9,
+    "source_order": 9,
+    "character": "本",
+    "meanings": [
+      "book",
+      "present",
+      "main",
+      "origin",
+      "true",
+      "real",
+      "counter for long cylindrical things"
+    ],
+    "readings": {
+      "onyomi": [
+        "ホン"
+      ],
+      "kunyomi": [
+        "もと"
+      ],
+      "nanori": [
+        "まと",
+        "ごう"
+      ]
+    },
+    "strokes": 5,
+    "grade": 1,
+    "frequency_rank": 10,
+    "classical_radical_numbers": [
+      75
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "木",
+        "meanings": [
+          "tree",
+          "wood"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "本",
+        "written_furigana": "{本}(ほん)",
+        "reading": "ほん",
+        "meanings": [
+          "book"
+        ]
+      },
+      {
+        "written_raw": "〜本",
+        "written_furigana": "〜{本}(ほん)",
+        "reading": "〜ほん",
+        "meanings": [
+          "counter for long cylindrical things"
+        ]
+      },
+      {
+        "written_raw": "本棚",
+        "written_furigana": "{本棚}(ほんだな)",
+        "reading": "ほんだな",
+        "meanings": [
+          "bookshelf"
+        ]
+      },
+      {
+        "written_raw": "本当",
+        "written_furigana": "{本当}(ほんとう)",
+        "reading": "ほんとう",
+        "meanings": [
+          "real",
+          "true"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0010",
+    "level": "N5",
+    "order": 10,
+    "source_order": 10,
+    "character": "中",
+    "meanings": [
+      "in",
+      "inside",
+      "middle",
+      "mean",
+      "center"
+    ],
+    "readings": {
+      "onyomi": [
+        "チュウ"
+      ],
+      "kunyomi": [
+        "なか",
+        "うち",
+        "あた.る"
+      ],
+      "nanori": [
+        "あたる",
+        "かなえ"
+      ]
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 11,
+    "classical_radical_numbers": [
+      2
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "｜",
+        "meanings": []
+      },
+      {
+        "symbol": "口",
+        "meanings": [
+          "mouth"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "〜中",
+        "written_furigana": "〜{中}(じゅう)",
+        "reading": "〜じゅう",
+        "meanings": [
+          "during",
+          "while"
+        ]
+      },
+      {
+        "written_raw": "〜中",
+        "written_furigana": "〜{中}(ちゅう)",
+        "reading": "〜ちゅう",
+        "meanings": [
+          "during",
+          "while ~ing"
+        ]
+      },
+      {
+        "written_raw": "中",
+        "written_furigana": "{中}(なか)",
+        "reading": "なか",
+        "meanings": [
+          "inside",
+          "middle",
+          "among"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0011",
+    "level": "N5",
+    "order": 11,
+    "source_order": 11,
+    "character": "長",
+    "meanings": [
+      "long",
+      "leader",
+      "superior",
+      "senior"
+    ],
+    "readings": {
+      "onyomi": [
+        "チョウ"
+      ],
+      "kunyomi": [
+        "なが.い",
+        "おさ"
+      ],
+      "nanori": [
+        "お",
+        "おしゃ",
+        "たかし",
+        "たけ",
+        "な",
+        "は",
+        "ひさ"
+      ]
+    },
+    "strokes": 8,
+    "grade": 2,
+    "frequency_rank": 12,
+    "classical_radical_numbers": [
+      168
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "長い",
+        "written_furigana": "{長}(なが)い",
+        "reading": "ながい",
+        "meanings": [
+          "long",
+          "lengthy"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0012",
+    "level": "N5",
+    "order": 12,
+    "source_order": 12,
+    "character": "出",
+    "meanings": [
+      "exit",
+      "leave",
+      "go out",
+      "come out",
+      "put out",
+      "protrude"
+    ],
+    "readings": {
+      "onyomi": [
+        "シュツ",
+        "スイ"
+      ],
+      "kunyomi": [
+        "で.る",
+        "-で",
+        "だ.す",
+        "-だ.す",
+        "い.でる",
+        "い.だす"
+      ],
+      "nanori": [
+        "いず",
+        "いづ",
+        "いで",
+        "じ",
+        "すっ",
+        "すつ",
+        "てん"
+      ]
+    },
+    "strokes": 5,
+    "grade": 1,
+    "frequency_rank": 13,
+    "classical_radical_numbers": [
+      17
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "｜",
+        "meanings": []
+      },
+      {
+        "symbol": "山",
+        "meanings": [
+          "mountain"
+        ]
+      },
+      {
+        "symbol": "凵",
+        "meanings": [
+          "open box enclosure",
+          "open box radical (no. 17)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "出かける",
+        "written_furigana": "{出}(で)かける",
+        "reading": "でかける",
+        "meanings": [
+          "to go out",
+          "to depart"
+        ]
+      },
+      {
+        "written_raw": "出す",
+        "written_furigana": "{出}(だ)す",
+        "reading": "だす",
+        "meanings": [
+          "to take (something) out",
+          "to hand in (something)"
+        ]
+      },
+      {
+        "written_raw": "出口",
+        "written_furigana": "{出口}(でぐち)",
+        "reading": "でぐち",
+        "meanings": [
+          "an exit"
+        ]
+      },
+      {
+        "written_raw": "出る",
+        "written_furigana": "{出}(で)る",
+        "reading": "でる",
+        "meanings": [
+          "to appear",
+          "to leave"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0013",
+    "level": "N5",
+    "order": 13,
+    "source_order": 13,
+    "character": "三",
+    "meanings": [
+      "three"
+    ],
+    "readings": {
+      "onyomi": [
+        "サン",
+        "ゾウ"
+      ],
+      "kunyomi": [
+        "み",
+        "み.つ",
+        "みっ.つ"
+      ],
+      "nanori": [
+        "か",
+        "さ",
+        "さい",
+        "さえ",
+        "さぶ",
+        "ざ",
+        "ざえ",
+        "ざぶ",
+        "そう",
+        "ぞ",
+        "ただ",
+        "みつ",
+        "みん",
+        "も",
+        "や"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 14,
+    "classical_radical_numbers": [
+      1
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "二",
+        "meanings": [
+          "two",
+          "two radical (no. 7)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "三つ",
+        "written_furigana": "{三}(みっ)つ",
+        "reading": "みっつ",
+        "meanings": [
+          "three things"
+        ]
+      },
+      {
+        "written_raw": "三日",
+        "written_furigana": "{三日}(みっか)",
+        "reading": "みっか",
+        "meanings": [
+          "three days",
+          "third day of the month"
+        ]
+      },
+      {
+        "written_raw": "三",
+        "written_furigana": "{三}(さん)",
+        "reading": "さん",
+        "meanings": [
+          "three"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0014",
+    "level": "N5",
+    "order": 14,
+    "source_order": 14,
+    "character": "時",
+    "meanings": [
+      "time",
+      "hour"
+    ],
+    "readings": {
+      "onyomi": [
+        "ジ"
+      ],
+      "kunyomi": [
+        "とき",
+        "-どき"
+      ],
+      "nanori": [
+        "と",
+        "とぎ"
+      ]
+    },
+    "strokes": 10,
+    "grade": 2,
+    "frequency_rank": 16,
+    "classical_radical_numbers": [
+      72
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "寸",
+        "meanings": [
+          "measurement",
+          "tenth of a shaku",
+          "a little"
+        ]
+      },
+      {
+        "symbol": "土",
+        "meanings": [
+          "soil",
+          "earth",
+          "ground"
+        ]
+      },
+      {
+        "symbol": "日",
+        "meanings": [
+          "day",
+          "sun",
+          "Japan"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "時計",
+        "written_furigana": "{時計}(とけい)",
+        "reading": "とけい",
+        "meanings": [
+          "a watch",
+          "a clock"
+        ]
+      },
+      {
+        "written_raw": "時々",
+        "written_furigana": "{時々}(ときどき)",
+        "reading": "ときどき",
+        "meanings": [
+          "sometimes"
+        ]
+      },
+      {
+        "written_raw": "時間",
+        "written_furigana": "{時間}(じかん)",
+        "reading": "じかん",
+        "meanings": [
+          "time"
+        ]
+      },
+      {
+        "written_raw": "〜時",
+        "written_furigana": "〜{時}(じ)",
+        "reading": "〜じ",
+        "meanings": [
+          "~ o'clock (time)"
+        ]
+      },
+      {
+        "written_raw": "〜時間",
+        "written_furigana": "〜{時間}(じかん)",
+        "reading": "〜じかん",
+        "meanings": [
+          "~ hours"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0015",
+    "level": "N5",
+    "order": 15,
+    "source_order": 15,
+    "character": "行",
+    "meanings": [
+      "going",
+      "journey",
+      "carry out",
+      "conduct",
+      "act",
+      "line",
+      "row",
+      "bank"
+    ],
+    "readings": {
+      "onyomi": [
+        "コウ",
+        "ギョウ",
+        "アン"
+      ],
+      "kunyomi": [
+        "い.く",
+        "ゆ.く",
+        "-ゆ.き",
+        "-ゆき",
+        "-い.き",
+        "-いき",
+        "おこな.う",
+        "おこ.なう"
+      ],
+      "nanori": [
+        "いく",
+        "なみ",
+        "なめ",
+        "みち",
+        "ゆき",
+        "ゆく"
+      ]
+    },
+    "strokes": 6,
+    "grade": 2,
+    "frequency_rank": 20,
+    "classical_radical_numbers": [
+      144
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "彳",
+        "meanings": [
+          "stop",
+          "linger",
+          "loiter"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "銀行",
+        "written_furigana": "{銀行}(ぎんこう)",
+        "reading": "ぎんこう",
+        "meanings": [
+          "bank"
+        ]
+      },
+      {
+        "written_raw": "飛行機",
+        "written_furigana": "{飛行機}(ひこうき)",
+        "reading": "ひこうき",
+        "meanings": [
+          "airplane"
+        ]
+      },
+      {
+        "written_raw": "旅行",
+        "written_furigana": "{旅行}(りょこう)",
+        "reading": "りょこう",
+        "meanings": [
+          "travel",
+          "trip"
+        ]
+      },
+      {
+        "written_raw": "行く",
+        "written_furigana": "{行}(い)く",
+        "reading": "いく",
+        "meanings": [
+          "to go"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0016",
+    "level": "N5",
+    "order": 16,
+    "source_order": 16,
+    "character": "見",
+    "meanings": [
+      "see",
+      "hopes",
+      "chances",
+      "idea",
+      "opinion",
+      "look at",
+      "visible"
+    ],
+    "readings": {
+      "onyomi": [
+        "ケン"
+      ],
+      "kunyomi": [
+        "み.る",
+        "み.える",
+        "み.せる"
+      ],
+      "nanori": []
+    },
+    "strokes": 7,
+    "grade": 1,
+    "frequency_rank": 22,
+    "classical_radical_numbers": [
+      147
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "目",
+        "meanings": [
+          "eye",
+          "class",
+          "look"
+        ]
+      },
+      {
+        "symbol": "儿",
+        "meanings": [
+          "legs radical (no. 10)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "見せる",
+        "written_furigana": "{見}(み)せる",
+        "reading": "みせる",
+        "meanings": [
+          "to show",
+          "to display"
+        ]
+      },
+      {
+        "written_raw": "見る",
+        "written_furigana": "{見}(み)る",
+        "reading": "みる",
+        "meanings": [
+          "to see",
+          "to look"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0017",
+    "level": "N5",
+    "order": 17,
+    "source_order": 17,
+    "character": "月",
+    "meanings": [
+      "month",
+      "moon"
+    ],
+    "readings": {
+      "onyomi": [
+        "ゲツ",
+        "ガツ"
+      ],
+      "kunyomi": [
+        "つき"
+      ],
+      "nanori": [
+        "おと",
+        "がっ",
+        "す",
+        "ずき",
+        "もり"
+      ]
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 23,
+    "classical_radical_numbers": [
+      74
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "月曜日",
+        "written_furigana": "{月曜日}(げつようび)",
+        "reading": "げつようび",
+        "meanings": [
+          "Monday"
+        ]
+      },
+      {
+        "written_raw": "今月",
+        "written_furigana": "{今月}(こんげつ)",
+        "reading": "こんげつ",
+        "meanings": [
+          "this month"
+        ]
+      },
+      {
+        "written_raw": "来月",
+        "written_furigana": "{来月}(らいげつ)",
+        "reading": "らいげつ",
+        "meanings": [
+          "next month"
+        ]
+      },
+      {
+        "written_raw": "先月",
+        "written_furigana": "{先月}(せんげつ)",
+        "reading": "せんげつ",
+        "meanings": [
+          "last month"
+        ]
+      },
+      {
+        "written_raw": "〜か月",
+        "written_furigana": "〜か{月}(げつ)",
+        "reading": "〜かげつ",
+        "meanings": [
+          "(number of) months"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0018",
+    "level": "N5",
+    "order": 18,
+    "source_order": 18,
+    "character": "後",
+    "meanings": [
+      "behind",
+      "back",
+      "later"
+    ],
+    "readings": {
+      "onyomi": [
+        "ゴ",
+        "コウ"
+      ],
+      "kunyomi": [
+        "のち",
+        "うし.ろ",
+        "うしろ",
+        "あと",
+        "おく.れる"
+      ],
+      "nanori": [
+        "こし",
+        "し",
+        "しい",
+        "しり"
+      ]
+    },
+    "strokes": 9,
+    "grade": 2,
+    "frequency_rank": 26,
+    "classical_radical_numbers": [
+      60
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "夂",
+        "meanings": [
+          "late",
+          "delayed",
+          "winter radical (no. 34)"
+        ]
+      },
+      {
+        "symbol": "幺",
+        "meanings": [
+          "short thread radical (no. 52)"
+        ]
+      },
+      {
+        "symbol": "彳",
+        "meanings": [
+          "stop",
+          "linger",
+          "loiter"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "午後",
+        "written_furigana": "{午後}(ごご)",
+        "reading": "ごご",
+        "meanings": [
+          "afternoon",
+          "P.M."
+        ]
+      },
+      {
+        "written_raw": "後",
+        "written_furigana": "{後}(あと)",
+        "reading": "あと",
+        "meanings": [
+          "afterwards (later)",
+          "in the future",
+          "the rest",
+          "since then"
+        ]
+      },
+      {
+        "written_raw": "明後日",
+        "written_furigana": "{明後日}(あさって)",
+        "reading": "あさって",
+        "meanings": [
+          "day after tomorrow"
+        ]
+      },
+      {
+        "written_raw": "後ろ",
+        "written_furigana": "{後}(うし)ろ",
+        "reading": "うしろ",
+        "meanings": [
+          "back",
+          "behind",
+          "rear"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0019",
+    "level": "N5",
+    "order": 19,
+    "source_order": 19,
+    "character": "前",
+    "meanings": [
+      "in front",
+      "before"
+    ],
+    "readings": {
+      "onyomi": [
+        "ゼン"
+      ],
+      "kunyomi": [
+        "まえ",
+        "-まえ"
+      ],
+      "nanori": [
+        "さき",
+        "さと",
+        "まい"
+      ]
+    },
+    "strokes": 9,
+    "grade": 2,
+    "frequency_rank": 27,
+    "classical_radical_numbers": [
+      18
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "刈",
+        "meanings": [
+          "reap",
+          "cut",
+          "clip"
+        ]
+      },
+      {
+        "symbol": "月",
+        "meanings": [
+          "month",
+          "moon"
+        ]
+      },
+      {
+        "symbol": "并",
+        "meanings": [
+          "put together"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "午前",
+        "written_furigana": "{午前}(ごぜん)",
+        "reading": "ごぜん",
+        "meanings": [
+          "morning",
+          "A.M."
+        ]
+      },
+      {
+        "written_raw": "名前",
+        "written_furigana": "{名前}(なまえ)",
+        "reading": "なまえ",
+        "meanings": [
+          "name"
+        ]
+      },
+      {
+        "written_raw": "前",
+        "written_furigana": "{前}(まえ)",
+        "reading": "まえ",
+        "meanings": [
+          "before",
+          "in front"
+        ]
+      },
+      {
+        "written_raw": "〜前",
+        "written_furigana": "〜{前}(まえ)",
+        "reading": "〜まえ",
+        "meanings": [
+          "in front of ~"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0020",
+    "level": "N5",
+    "order": 20,
+    "source_order": 20,
+    "character": "生",
+    "meanings": [
+      "life",
+      "genuine",
+      "birth"
+    ],
+    "readings": {
+      "onyomi": [
+        "セイ",
+        "ショウ"
+      ],
+      "kunyomi": [
+        "い.きる",
+        "い.かす",
+        "い.ける",
+        "う.まれる",
+        "うま.れる",
+        "う.まれ",
+        "うまれ",
+        "う.む",
+        "お.う",
+        "は.える",
+        "は.やす",
+        "き",
+        "なま",
+        "なま-",
+        "な.る",
+        "な.す",
+        "む.す",
+        "-う"
+      ],
+      "nanori": [
+        "あさ",
+        "いき",
+        "いく",
+        "いけ",
+        "うぶ",
+        "うまい",
+        "え",
+        "おい",
+        "ぎゅう",
+        "くるみ",
+        "ごせ",
+        "さ",
+        "じょう",
+        "すぎ",
+        "そ",
+        "そう",
+        "ちる",
+        "なば",
+        "にう",
+        "にゅう",
+        "ふ",
+        "み",
+        "もう",
+        "よい",
+        "りゅう"
+      ]
+    },
+    "strokes": 5,
+    "grade": 1,
+    "frequency_rank": 29,
+    "classical_radical_numbers": [
+      100
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "学生",
+        "written_furigana": "{学生}(がくせい)",
+        "reading": "がくせい",
+        "meanings": [
+          "student"
+        ]
+      },
+      {
+        "written_raw": "先生",
+        "written_furigana": "{先生}(せんせい)",
+        "reading": "せんせい",
+        "meanings": [
+          "teacher",
+          "professor",
+          "master",
+          "doctor"
+        ]
+      },
+      {
+        "written_raw": "留学生",
+        "written_furigana": "{留学生}(りゅうがくせい)",
+        "reading": "りゅうがくせい",
+        "meanings": [
+          "international student"
+        ]
+      },
+      {
+        "written_raw": "誕生日",
+        "written_furigana": "{誕生日}(たんじょうび)",
+        "reading": "たんじょうび",
+        "meanings": [
+          "birthday"
+        ]
+      },
+      {
+        "written_raw": "生まれる",
+        "written_furigana": "{生}(う)まれる",
+        "reading": "うまれる",
+        "meanings": [
+          "to be born"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0021",
+    "level": "N5",
+    "order": 21,
+    "source_order": 21,
+    "character": "五",
+    "meanings": [
+      "five"
+    ],
+    "readings": {
+      "onyomi": [
+        "ゴ"
+      ],
+      "kunyomi": [
+        "いつ",
+        "いつ.つ"
+      ],
+      "nanori": [
+        "い",
+        "さ",
+        "さつ",
+        "ち",
+        "ふ",
+        "み",
+        "め"
+      ]
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 31,
+    "classical_radical_numbers": [
+      7
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "五つ",
+        "written_furigana": "<furigana>五つ</furigana>",
+        "reading": "いつつ",
+        "meanings": [
+          "five things"
+        ]
+      },
+      {
+        "written_raw": "五日",
+        "written_furigana": "{五日}(いつか)",
+        "reading": "いつか",
+        "meanings": [
+          "five days",
+          "fifth day of the month"
+        ]
+      },
+      {
+        "written_raw": "五",
+        "written_furigana": "{五}(ご)",
+        "reading": "ご",
+        "meanings": [
+          "five"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0022",
+    "level": "N5",
+    "order": 22,
+    "source_order": 22,
+    "character": "間",
+    "meanings": [
+      "interval",
+      "space"
+    ],
+    "readings": {
+      "onyomi": [
+        "カン",
+        "ケン"
+      ],
+      "kunyomi": [
+        "あいだ",
+        "ま",
+        "あい"
+      ],
+      "nanori": [
+        "ちか",
+        "は",
+        "はざ",
+        "はし"
+      ]
+    },
+    "strokes": 12,
+    "grade": 2,
+    "frequency_rank": 33,
+    "classical_radical_numbers": [
+      169
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "日",
+        "meanings": [
+          "day",
+          "sun",
+          "Japan"
+        ]
+      },
+      {
+        "symbol": "門",
+        "meanings": [
+          "gate",
+          "counter for cannons"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "時間",
+        "written_furigana": "{時間}(じかん)",
+        "reading": "じかん",
+        "meanings": [
+          "time"
+        ]
+      },
+      {
+        "written_raw": "〜時間",
+        "written_furigana": "〜{時間}(じかん)",
+        "reading": "〜じかん",
+        "meanings": [
+          "~ hours"
+        ]
+      },
+      {
+        "written_raw": "〜週間",
+        "written_furigana": "〜{週間}(しゅうかん)",
+        "reading": "〜しゅうかん",
+        "meanings": [
+          "~ weeks"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0023",
+    "level": "N5",
+    "order": 23,
+    "source_order": 23,
+    "character": "上",
+    "meanings": [
+      "above",
+      "up"
+    ],
+    "readings": {
+      "onyomi": [
+        "ジョウ",
+        "ショウ",
+        "シャン"
+      ],
+      "kunyomi": [
+        "うえ",
+        "-うえ",
+        "うわ-",
+        "かみ",
+        "あ.げる",
+        "-あ.げる",
+        "あ.がる",
+        "-あ.がる",
+        "あ.がり",
+        "-あ.がり",
+        "のぼ.る",
+        "のぼ.り",
+        "のぼ.せる",
+        "のぼ.す",
+        "たてまつ.る"
+      ],
+      "nanori": [
+        "あおい",
+        "あげ",
+        "い",
+        "か",
+        "かき",
+        "かず",
+        "かん",
+        "こう",
+        "のぼり",
+        "ほつ"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 35,
+    "classical_radical_numbers": [
+      1
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "卜",
+        "meanings": [
+          "divining",
+          "fortune-telling",
+          "divination or katakana to radical (no. 25)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "上げる",
+        "written_furigana": "{上}(あ)げる",
+        "reading": "あげる",
+        "meanings": [
+          "to raise",
+          "to lift"
+        ]
+      },
+      {
+        "written_raw": "上",
+        "written_furigana": "{上}(うえ)",
+        "reading": "うえ",
+        "meanings": [
+          "above (up",
+          "top",
+          "etc.)",
+          "over",
+          "on top of"
+        ]
+      },
+      {
+        "written_raw": "上着",
+        "written_furigana": "{上着}(うわぎ)",
+        "reading": "うわぎ",
+        "meanings": [
+          "coat",
+          "jacket"
+        ]
+      },
+      {
+        "written_raw": "上手",
+        "written_furigana": "{上手}(じょうず)",
+        "reading": "じょうず",
+        "meanings": [
+          "be good at",
+          "skillful"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0024",
+    "level": "N5",
+    "order": 24,
+    "source_order": 24,
+    "character": "東",
+    "meanings": [
+      "east"
+    ],
+    "readings": {
+      "onyomi": [
+        "トウ"
+      ],
+      "kunyomi": [
+        "ひがし"
+      ],
+      "nanori": [
+        "あい",
+        "あがり",
+        "あずま",
+        "あづま",
+        "こち",
+        "さき",
+        "しの",
+        "とお",
+        "はる",
+        "ひが",
+        "もと"
+      ]
+    },
+    "strokes": 8,
+    "grade": 2,
+    "frequency_rank": 37,
+    "classical_radical_numbers": [
+      75
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "｜",
+        "meanings": []
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "日",
+        "meanings": [
+          "day",
+          "sun",
+          "Japan"
+        ]
+      },
+      {
+        "symbol": "木",
+        "meanings": [
+          "tree",
+          "wood"
+        ]
+      },
+      {
+        "symbol": "田",
+        "meanings": [
+          "rice field",
+          "rice paddy"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "東",
+        "written_furigana": "{東}(ひがし)",
+        "reading": "ひがし",
+        "meanings": [
+          "east"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0025",
+    "level": "N5",
+    "order": 25,
+    "source_order": 25,
+    "character": "四",
+    "meanings": [
+      "four"
+    ],
+    "readings": {
+      "onyomi": [
+        "シ"
+      ],
+      "kunyomi": [
+        "よ",
+        "よ.つ",
+        "よっ.つ",
+        "よん"
+      ],
+      "nanori": [
+        "あ",
+        "つ",
+        "よつ"
+      ]
+    },
+    "strokes": 5,
+    "grade": 1,
+    "frequency_rank": 47,
+    "classical_radical_numbers": [
+      31
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "儿",
+        "meanings": [
+          "legs radical (no. 10)"
+        ]
+      },
+      {
+        "symbol": "囗",
+        "meanings": [
+          "box",
+          "box or enclosure radical (no. 31)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "四つ",
+        "written_furigana": "{四}(よっ)つ",
+        "reading": "よっつ",
+        "meanings": [
+          "four things"
+        ]
+      },
+      {
+        "written_raw": "四日",
+        "written_furigana": "{四日}(よっか)",
+        "reading": "よっか",
+        "meanings": [
+          "four days",
+          "fourth day of the month"
+        ]
+      },
+      {
+        "written_raw": "四",
+        "written_furigana": "{四}(し)",
+        "reading": "し",
+        "meanings": [
+          "four"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0026",
+    "level": "N5",
+    "order": 26,
+    "source_order": 26,
+    "character": "今",
+    "meanings": [
+      "now"
+    ],
+    "readings": {
+      "onyomi": [
+        "コン",
+        "キン"
+      ],
+      "kunyomi": [
+        "いま"
+      ],
+      "nanori": [
+        "な"
+      ]
+    },
+    "strokes": 4,
+    "grade": 2,
+    "frequency_rank": 49,
+    "classical_radical_numbers": [
+      9
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "个",
+        "meanings": [
+          "counter for articles",
+          "individual"
+        ]
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "今",
+        "written_furigana": "{今}(いま)",
+        "reading": "いま",
+        "meanings": [
+          "now"
+        ]
+      },
+      {
+        "written_raw": "今日",
+        "written_furigana": "{今日}(きょう)",
+        "reading": "きょう",
+        "meanings": [
+          "today",
+          "this day"
+        ]
+      },
+      {
+        "written_raw": "今晩",
+        "written_furigana": "{今晩}(こんばん)",
+        "reading": "こんばん",
+        "meanings": [
+          "tonight",
+          "this evening"
+        ]
+      },
+      {
+        "written_raw": "今週",
+        "written_furigana": "{今週}(こんしゅう)",
+        "reading": "こんしゅう",
+        "meanings": [
+          "this week"
+        ]
+      },
+      {
+        "written_raw": "今朝",
+        "written_furigana": "{今朝}(けさ)",
+        "reading": "けさ",
+        "meanings": [
+          "this morning"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0027",
+    "level": "N5",
+    "order": 27,
+    "source_order": 27,
+    "character": "金",
+    "meanings": [
+      "gold"
+    ],
+    "readings": {
+      "onyomi": [
+        "キン",
+        "コン",
+        "ゴン"
+      ],
+      "kunyomi": [
+        "かね",
+        "かな-",
+        "-がね"
+      ],
+      "nanori": [
+        "かん",
+        "きむ",
+        "こ",
+        "この",
+        "ん"
+      ]
+    },
+    "strokes": 8,
+    "grade": 1,
+    "frequency_rank": 53,
+    "classical_radical_numbers": [
+      167
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "王",
+        "meanings": [
+          "king",
+          "rule",
+          "magnate"
+        ]
+      },
+      {
+        "symbol": "ハ",
+        "meanings": []
+      },
+      {
+        "symbol": "个",
+        "meanings": [
+          "counter for articles",
+          "individual"
+        ]
+      },
+      {
+        "symbol": "并",
+        "meanings": [
+          "put together"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "金曜日",
+        "written_furigana": "{金曜日}(きんようび)",
+        "reading": "きんようび",
+        "meanings": [
+          "Friday"
+        ]
+      },
+      {
+        "written_raw": "お金",
+        "written_furigana": "お{金}(かね)",
+        "reading": "おかね",
+        "meanings": [
+          "money"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0028",
+    "level": "N5",
+    "order": 28,
+    "source_order": 28,
+    "character": "九",
+    "meanings": [
+      "nine"
+    ],
+    "readings": {
+      "onyomi": [
+        "キュウ",
+        "ク"
+      ],
+      "kunyomi": [
+        "ここの",
+        "ここの.つ"
+      ],
+      "nanori": [
+        "いちじく",
+        "いちのく",
+        "この",
+        "ひさし"
+      ]
+    },
+    "strokes": 2,
+    "grade": 1,
+    "frequency_rank": 55,
+    "classical_radical_numbers": [
+      5
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "九つ",
+        "written_furigana": "{九}(ここの)つ",
+        "reading": "ここのつ",
+        "meanings": [
+          "nine things"
+        ]
+      },
+      {
+        "written_raw": "九日",
+        "written_furigana": "{九日}(ここのか)",
+        "reading": "ここのか",
+        "meanings": [
+          "nine days",
+          "ninth day of the month"
+        ]
+      },
+      {
+        "written_raw": "九",
+        "written_furigana": "{九}(きゅう)",
+        "reading": "きゅう",
+        "meanings": [
+          "nine"
+        ]
+      },
+      {
+        "written_raw": "九",
+        "written_furigana": "{九}(く)",
+        "reading": "く",
+        "meanings": [
+          "nine"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0029",
+    "level": "N5",
+    "order": 29,
+    "source_order": 29,
+    "character": "入",
+    "meanings": [
+      "enter",
+      "insert"
+    ],
+    "readings": {
+      "onyomi": [
+        "ニュウ",
+        "ジュ"
+      ],
+      "kunyomi": [
+        "い.る",
+        "-い.る",
+        "-い.り",
+        "い.れる",
+        "-い.れ",
+        "はい.る"
+      ],
+      "nanori": [
+        "いり",
+        "いる",
+        "に",
+        "の",
+        "りり"
+      ]
+    },
+    "strokes": 2,
+    "grade": 1,
+    "frequency_rank": 56,
+    "classical_radical_numbers": [
+      11
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "入口",
+        "written_furigana": "{入口}(いりぐち)",
+        "reading": "いりぐち",
+        "meanings": [
+          "entrance"
+        ]
+      },
+      {
+        "written_raw": "入れる",
+        "written_furigana": "{入}(い)れる",
+        "reading": "いれる",
+        "meanings": [
+          "to put in"
+        ]
+      },
+      {
+        "written_raw": "入る",
+        "written_furigana": "{入}(はい)る",
+        "reading": "はいる",
+        "meanings": [
+          "to enter",
+          "to contain",
+          "to hold"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0030",
+    "level": "N5",
+    "order": 30,
+    "source_order": 30,
+    "character": "学",
+    "meanings": [
+      "study",
+      "learning",
+      "science"
+    ],
+    "readings": {
+      "onyomi": [
+        "ガク"
+      ],
+      "kunyomi": [
+        "まな.ぶ"
+      ],
+      "nanori": [
+        "たか",
+        "のり"
+      ]
+    },
+    "strokes": 8,
+    "grade": 1,
+    "frequency_rank": 63,
+    "classical_radical_numbers": [
+      39
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "子",
+        "meanings": [
+          "child",
+          "sign of the rat",
+          "11PM-1AM"
+        ]
+      },
+      {
+        "symbol": "尚",
+        "meanings": [
+          "esteem",
+          "furthermore",
+          "still"
+        ]
+      },
+      {
+        "symbol": "冖",
+        "meanings": [
+          "wa-shaped crown radical (no. 14)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "学生",
+        "written_furigana": "{学生}(がくせい)",
+        "reading": "がくせい",
+        "meanings": [
+          "student"
+        ]
+      },
+      {
+        "written_raw": "大学",
+        "written_furigana": "{大学}(だいがく)",
+        "reading": "だいがく",
+        "meanings": [
+          "college",
+          "university"
+        ]
+      },
+      {
+        "written_raw": "留学生",
+        "written_furigana": "{留学生}(りゅうがくせい)",
+        "reading": "りゅうがくせい",
+        "meanings": [
+          "international student"
+        ]
+      },
+      {
+        "written_raw": "学校",
+        "written_furigana": "{学校}(がっこう)",
+        "reading": "がっこう",
+        "meanings": [
+          "a school"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0031",
+    "level": "N5",
+    "order": 31,
+    "source_order": 31,
+    "character": "高",
+    "meanings": [
+      "tall",
+      "high",
+      "expensive"
+    ],
+    "readings": {
+      "onyomi": [
+        "コウ"
+      ],
+      "kunyomi": [
+        "たか.い",
+        "たか",
+        "-だか",
+        "たか.まる",
+        "たか.める"
+      ],
+      "nanori": [
+        "か",
+        "こ",
+        "じょい",
+        "た",
+        "はか"
+      ]
+    },
+    "strokes": 10,
+    "grade": 2,
+    "frequency_rank": 65,
+    "classical_radical_numbers": [
+      189
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "口",
+        "meanings": [
+          "mouth"
+        ]
+      },
+      {
+        "symbol": "亠",
+        "meanings": [
+          "kettle lid radical (no. 8)"
+        ]
+      },
+      {
+        "symbol": "冂",
+        "meanings": [
+          "upside-down box radical (no. 13)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "高い",
+        "written_furigana": "{高}(たか)い",
+        "reading": "たかい",
+        "meanings": [
+          "tall",
+          "high",
+          "expensive"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0032",
+    "level": "N5",
+    "order": 32,
+    "source_order": 32,
+    "character": "円",
+    "meanings": [
+      "circle",
+      "yen",
+      "round"
+    ],
+    "readings": {
+      "onyomi": [
+        "エン"
+      ],
+      "kunyomi": [
+        "まる.い",
+        "まる",
+        "まど",
+        "まど.か",
+        "まろ.やか"
+      ],
+      "nanori": [
+        "つぶら",
+        "のぶ",
+        "まどか",
+        "みつ"
+      ]
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 69,
+    "classical_radical_numbers": [
+      13
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "冂",
+        "meanings": [
+          "upside-down box radical (no. 13)"
+        ]
+      },
+      {
+        "symbol": "亠",
+        "meanings": [
+          "kettle lid radical (no. 8)"
+        ]
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "｜",
+        "meanings": []
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "〜円",
+        "written_furigana": "〜{円}(えん)",
+        "reading": "〜えん",
+        "meanings": [
+          "Yen"
+        ]
+      },
+      {
+        "written_raw": "丸い",
+        "written_furigana": "{丸}(まる)い",
+        "reading": "まるい",
+        "meanings": [
+          "round",
+          "circular"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0033",
+    "level": "N5",
+    "order": 33,
+    "source_order": 33,
+    "character": "子",
+    "meanings": [
+      "child",
+      "sign of the rat",
+      "11PM-1AM",
+      "first sign of Chinese zodiac"
+    ],
+    "readings": {
+      "onyomi": [
+        "シ",
+        "ス",
+        "ツ"
+      ],
+      "kunyomi": [
+        "こ",
+        "-こ",
+        "ね"
+      ],
+      "nanori": [
+        "い",
+        "き",
+        "ぎ",
+        "く",
+        "け",
+        "ねっ"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 72,
+    "classical_radical_numbers": [
+      39
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "帽子",
+        "written_furigana": "{帽子}(ぼうし)",
+        "reading": "ぼうし",
+        "meanings": [
+          "hat",
+          "cap"
+        ]
+      },
+      {
+        "written_raw": "子供",
+        "written_furigana": "{子供}(こども)",
+        "reading": "こども",
+        "meanings": [
+          "child(ren)"
+        ]
+      },
+      {
+        "written_raw": "お菓子",
+        "written_furigana": "お{菓子}(かし)",
+        "reading": "おかし",
+        "meanings": [
+          "confections",
+          "sweets",
+          "snack"
+        ]
+      },
+      {
+        "written_raw": "男の子",
+        "written_furigana": "{男}(おとこ)の{子}(こ)",
+        "reading": "おとこのこ",
+        "meanings": [
+          "boy"
+        ]
+      },
+      {
+        "written_raw": "女の子",
+        "written_furigana": "{女}(おんな)の{子}(こ)",
+        "reading": "おんなのこ",
+        "meanings": [
+          "girl"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0034",
+    "level": "N5",
+    "order": 34,
+    "source_order": 34,
+    "character": "外",
+    "meanings": [
+      "outside"
+    ],
+    "readings": {
+      "onyomi": [
+        "ガイ",
+        "ゲ"
+      ],
+      "kunyomi": [
+        "そと",
+        "ほか",
+        "はず.す",
+        "はず.れる",
+        "と-"
+      ],
+      "nanori": [
+        "うい",
+        "け",
+        "ふか"
+      ]
+    },
+    "strokes": 5,
+    "grade": 2,
+    "frequency_rank": 81,
+    "classical_radical_numbers": [
+      36
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "卜",
+        "meanings": [
+          "divining",
+          "fortune-telling",
+          "divination or katakana to radical (no. 25)"
+        ]
+      },
+      {
+        "symbol": "夕",
+        "meanings": [
+          "evening"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "外国",
+        "written_furigana": "{外国}(がいこく)",
+        "reading": "がいこく",
+        "meanings": [
+          "foreign country",
+          "abroad"
+        ]
+      },
+      {
+        "written_raw": "外国人",
+        "written_furigana": "{外国人}(がいこくじん)",
+        "reading": "がいこくじん",
+        "meanings": [
+          "foreigner"
+        ]
+      },
+      {
+        "written_raw": "外",
+        "written_furigana": "{外}(そと)",
+        "reading": "そと",
+        "meanings": [
+          "outside",
+          "exterior"
+        ]
+      },
+      {
+        "written_raw": "外",
+        "written_furigana": "{外}(ほか)",
+        "reading": "ほか",
+        "meanings": [
+          "other",
+          "the rest"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0035",
+    "level": "N5",
+    "order": 35,
+    "source_order": 35,
+    "character": "八",
+    "meanings": [
+      "eight",
+      "eight radical (no. 12)"
+    ],
+    "readings": {
+      "onyomi": [
+        "ハチ",
+        "ハツ"
+      ],
+      "kunyomi": [
+        "や",
+        "や.つ",
+        "やっ.つ",
+        "よう"
+      ],
+      "nanori": [
+        "な",
+        "は",
+        "はっ",
+        "やち",
+        "やつ"
+      ]
+    },
+    "strokes": 2,
+    "grade": 1,
+    "frequency_rank": 92,
+    "classical_radical_numbers": [
+      12
+    ],
+    "radical_names": [
+      "はちがしら"
+    ],
+    "components": [
+      {
+        "symbol": "ハ",
+        "meanings": []
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "八つ",
+        "written_furigana": "{八}(やっ)つ",
+        "reading": "やっつ",
+        "meanings": [
+          "eight things"
+        ]
+      },
+      {
+        "written_raw": "八日",
+        "written_furigana": "{八日}(ようか)",
+        "reading": "ようか",
+        "meanings": [
+          "eight days",
+          "eighth day of the month"
+        ]
+      },
+      {
+        "written_raw": "八",
+        "written_furigana": "{八}(はち)",
+        "reading": "はち",
+        "meanings": [
+          "eight"
+        ]
+      },
+      {
+        "written_raw": "八百屋",
+        "written_furigana": "{八百屋}(やおや)",
+        "reading": "やおや",
+        "meanings": [
+          "greengrocer"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0036",
+    "level": "N5",
+    "order": 36,
+    "source_order": 36,
+    "character": "六",
+    "meanings": [
+      "six"
+    ],
+    "readings": {
+      "onyomi": [
+        "ロク",
+        "リク"
+      ],
+      "kunyomi": [
+        "む",
+        "む.つ",
+        "むっ.つ",
+        "むい"
+      ],
+      "nanori": [
+        "く",
+        "むつ",
+        "ろっ",
+        "ろつ"
+      ]
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 93,
+    "classical_radical_numbers": [
+      12
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "ハ",
+        "meanings": []
+      },
+      {
+        "symbol": "亠",
+        "meanings": [
+          "kettle lid radical (no. 8)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "六つ",
+        "written_furigana": "{六}(むっ)つ",
+        "reading": "むっつ",
+        "meanings": [
+          "six things"
+        ]
+      },
+      {
+        "written_raw": "六日",
+        "written_furigana": "{六日}(むいか)",
+        "reading": "むいか",
+        "meanings": [
+          "six days",
+          "sixth day of month"
+        ]
+      },
+      {
+        "written_raw": "六",
+        "written_furigana": "{六}(ろく)",
+        "reading": "ろく",
+        "meanings": [
+          "six"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0037",
+    "level": "N5",
+    "order": 37,
+    "source_order": 37,
+    "character": "下",
+    "meanings": [
+      "below",
+      "down",
+      "descend",
+      "give",
+      "low",
+      "inferior"
+    ],
+    "readings": {
+      "onyomi": [
+        "カ",
+        "ゲ"
+      ],
+      "kunyomi": [
+        "した",
+        "しも",
+        "もと",
+        "さ.げる",
+        "さ.がる",
+        "くだ.る",
+        "くだ.り",
+        "くだ.す",
+        "-くだ.す",
+        "くだ.さる",
+        "お.ろす",
+        "お.りる"
+      ],
+      "nanori": [
+        "さか",
+        "しと"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 97,
+    "classical_radical_numbers": [
+      1
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "｜",
+        "meanings": []
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "卜",
+        "meanings": [
+          "divining",
+          "fortune-telling",
+          "divination or katakana to radical (no. 25)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "地下鉄",
+        "written_furigana": "{地下鉄}(ちかてつ)",
+        "reading": "ちかてつ",
+        "meanings": [
+          "underground train",
+          "subway"
+        ]
+      },
+      {
+        "written_raw": "靴下",
+        "written_furigana": "{靴下}(くつした)",
+        "reading": "くつした",
+        "meanings": [
+          "socks"
+        ]
+      },
+      {
+        "written_raw": "下さい",
+        "written_furigana": "{下}(くだ)さい",
+        "reading": "ください",
+        "meanings": [
+          "(with te-form verb) please do for me"
+        ]
+      },
+      {
+        "written_raw": "下",
+        "written_furigana": "{下}(した)",
+        "reading": "した",
+        "meanings": [
+          "under",
+          "below",
+          "beneath"
+        ]
+      },
+      {
+        "written_raw": "下手",
+        "written_furigana": "{下手}(へた)",
+        "reading": "へた",
+        "meanings": [
+          "unskillful",
+          "poor"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0038",
+    "level": "N5",
+    "order": 38,
+    "source_order": 38,
+    "character": "来",
+    "meanings": [
+      "come",
+      "due",
+      "next",
+      "cause",
+      "become"
+    ],
+    "readings": {
+      "onyomi": [
+        "ライ",
+        "タイ"
+      ],
+      "kunyomi": [
+        "く.る",
+        "きた.る",
+        "きた.す",
+        "き.たす",
+        "き.たる",
+        "き",
+        "こ"
+      ],
+      "nanori": [
+        "くり",
+        "くる",
+        "ごろ",
+        "さ"
+      ]
+    },
+    "strokes": 7,
+    "grade": 2,
+    "frequency_rank": 102,
+    "classical_radical_numbers": [
+      75
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "｜",
+        "meanings": []
+      },
+      {
+        "symbol": "二",
+        "meanings": [
+          "two",
+          "two radical (no. 7)"
+        ]
+      },
+      {
+        "symbol": "米",
+        "meanings": [
+          "rice",
+          "USA",
+          "metre"
+        ]
+      },
+      {
+        "symbol": "亠",
+        "meanings": [
+          "kettle lid radical (no. 8)"
+        ]
+      },
+      {
+        "symbol": "木",
+        "meanings": [
+          "tree",
+          "wood"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "来週",
+        "written_furigana": "{来週}(らいしゅう)",
+        "reading": "らいしゅう",
+        "meanings": [
+          "next week"
+        ]
+      },
+      {
+        "written_raw": "来年",
+        "written_furigana": "{来年}(らいねん)",
+        "reading": "らいねん",
+        "meanings": [
+          "next year"
+        ]
+      },
+      {
+        "written_raw": "来月",
+        "written_furigana": "{来月}(らいげつ)",
+        "reading": "らいげつ",
+        "meanings": [
+          "next month"
+        ]
+      },
+      {
+        "written_raw": "来る",
+        "written_furigana": "{来}(く)る",
+        "reading": "くる",
+        "meanings": [
+          "to come"
+        ]
+      },
+      {
+        "written_raw": "さ来年",
+        "written_furigana": "さ{来年}(らいねん)",
+        "reading": "さらいねん",
+        "meanings": [
+          "year after next"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0039",
+    "level": "N5",
+    "order": 39,
+    "source_order": 39,
+    "character": "気",
+    "meanings": [
+      "spirit",
+      "mind",
+      "air",
+      "atmosphere",
+      "mood"
+    ],
+    "readings": {
+      "onyomi": [
+        "キ",
+        "ケ"
+      ],
+      "kunyomi": [
+        "いき",
+        "き"
+      ],
+      "nanori": []
+    },
+    "strokes": 6,
+    "grade": 1,
+    "frequency_rank": 113,
+    "classical_radical_numbers": [
+      84
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "气",
+        "meanings": [
+          "spirit",
+          "steam radical (no. 84)"
+        ]
+      },
+      {
+        "symbol": "丶",
+        "meanings": [
+          "dot",
+          "tick or dot radical (no. 3)"
+        ]
+      },
+      {
+        "symbol": "ノ",
+        "meanings": []
+      },
+      {
+        "symbol": "乞",
+        "meanings": [
+          "beg",
+          "invite",
+          "ask"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "天気",
+        "written_furigana": "{天気}(てんき)",
+        "reading": "てんき",
+        "meanings": [
+          "weather"
+        ]
+      },
+      {
+        "written_raw": "電気",
+        "written_furigana": "{電気}(でんき)",
+        "reading": "でんき",
+        "meanings": [
+          "electricity",
+          "(electric) light"
+        ]
+      },
+      {
+        "written_raw": "病気",
+        "written_furigana": "{病気}(びょうき)",
+        "reading": "びょうき",
+        "meanings": [
+          "illness",
+          "sickness"
+        ]
+      },
+      {
+        "written_raw": "元気",
+        "written_furigana": "{元気}(げんき)",
+        "reading": "げんき",
+        "meanings": [
+          "health(y)",
+          "energetic"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0040",
+    "level": "N5",
+    "order": 40,
+    "source_order": 40,
+    "character": "小",
+    "meanings": [
+      "little",
+      "small"
+    ],
+    "readings": {
+      "onyomi": [
+        "ショウ"
+      ],
+      "kunyomi": [
+        "ちい.さい",
+        "こ-",
+        "お-",
+        "さ-"
+      ],
+      "nanori": [
+        "いさら",
+        "こう",
+        "さざ",
+        "しゃお",
+        "ちいさ"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 114,
+    "classical_radical_numbers": [
+      42
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "小さい",
+        "written_furigana": "{小}(ちい)さい",
+        "reading": "ちいさい",
+        "meanings": [
+          "small",
+          "little"
+        ]
+      },
+      {
+        "written_raw": "小さな",
+        "written_furigana": "{小}(ちい)さな",
+        "reading": "ちいさな",
+        "meanings": [
+          "small",
+          "little"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0041",
+    "level": "N5",
+    "order": 41,
+    "source_order": 41,
+    "character": "七",
+    "meanings": [
+      "seven"
+    ],
+    "readings": {
+      "onyomi": [
+        "シチ"
+      ],
+      "kunyomi": [
+        "なな",
+        "なな.つ",
+        "なの"
+      ],
+      "nanori": [
+        "し",
+        "しっ",
+        "な",
+        "ひち"
+      ]
+    },
+    "strokes": 2,
+    "grade": 1,
+    "frequency_rank": 115,
+    "classical_radical_numbers": [
+      1
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "乙",
+        "meanings": [
+          "the latter",
+          "duplicate",
+          "strange"
+        ]
+      },
+      {
+        "symbol": "匕",
+        "meanings": [
+          "spoon",
+          "spoon or katakana hi radical (no. 21)"
+        ]
+      },
+      {
+        "symbol": "ノ",
+        "meanings": []
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "七つ",
+        "written_furigana": "{七}(なな)つ",
+        "reading": "ななつ",
+        "meanings": [
+          "seven things"
+        ]
+      },
+      {
+        "written_raw": "七日",
+        "written_furigana": "{七日}(なのか)",
+        "reading": "なのか",
+        "meanings": [
+          "seven days",
+          "seventh day (of the month)"
+        ]
+      },
+      {
+        "written_raw": "七",
+        "written_furigana": "{七}(しち)",
+        "reading": "しち",
+        "meanings": [
+          "seven"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0042",
+    "level": "N5",
+    "order": 42,
+    "source_order": 42,
+    "character": "山",
+    "meanings": [
+      "mountain"
+    ],
+    "readings": {
+      "onyomi": [
+        "サン",
+        "セン"
+      ],
+      "kunyomi": [
+        "やま"
+      ],
+      "nanori": [
+        "さ",
+        "やの",
+        "やん"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 131,
+    "classical_radical_numbers": [
+      46
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "山",
+        "written_furigana": "{山}(やま)",
+        "reading": "やま",
+        "meanings": [
+          "mountain"
+        ]
+      },
+      {
+        "written_raw": "沢山",
+        "written_furigana": "{沢山}(たくさん)",
+        "reading": "たくさん",
+        "meanings": [
+          "many",
+          "much"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0043",
+    "level": "N5",
+    "order": 43,
+    "source_order": 43,
+    "character": "話",
+    "meanings": [
+      "tale",
+      "talk"
+    ],
+    "readings": {
+      "onyomi": [
+        "ワ"
+      ],
+      "kunyomi": [
+        "はな.す",
+        "はなし"
+      ],
+      "nanori": []
+    },
+    "strokes": 13,
+    "grade": 2,
+    "frequency_rank": 134,
+    "classical_radical_numbers": [
+      149
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "言",
+        "meanings": [
+          "say",
+          "word"
+        ]
+      },
+      {
+        "symbol": "口",
+        "meanings": [
+          "mouth"
+        ]
+      },
+      {
+        "symbol": "舌",
+        "meanings": [
+          "tongue",
+          "reed",
+          "clapper"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "電話",
+        "written_furigana": "{電話}(でんわ)",
+        "reading": "でんわ",
+        "meanings": [
+          "a telephone"
+        ]
+      },
+      {
+        "written_raw": "話",
+        "written_furigana": "{話}(はなし)",
+        "reading": "はなし",
+        "meanings": [
+          "talk (chat)",
+          "story"
+        ]
+      },
+      {
+        "written_raw": "話す",
+        "written_furigana": "{話}(はな)す",
+        "reading": "はなす",
+        "meanings": [
+          "to speak"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0044",
+    "level": "N5",
+    "order": 44,
+    "source_order": 44,
+    "character": "女",
+    "meanings": [
+      "woman",
+      "female"
+    ],
+    "readings": {
+      "onyomi": [
+        "ジョ",
+        "ニョ",
+        "ニョウ"
+      ],
+      "kunyomi": [
+        "おんな",
+        "め"
+      ],
+      "nanori": [
+        "おな",
+        "た",
+        "つき",
+        "な"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 151,
+    "classical_radical_numbers": [
+      38
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "女の子",
+        "written_furigana": "{女}(おんな)の{子}(こ)",
+        "reading": "おんなのこ",
+        "meanings": [
+          "girl"
+        ]
+      },
+      {
+        "written_raw": "女",
+        "written_furigana": "{女}(おんな)",
+        "reading": "おんな",
+        "meanings": [
+          "woman",
+          "female"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0045",
+    "level": "N5",
+    "order": 45,
+    "source_order": 45,
+    "character": "北",
+    "meanings": [
+      "north"
+    ],
+    "readings": {
+      "onyomi": [
+        "ホク"
+      ],
+      "kunyomi": [
+        "きた"
+      ],
+      "nanori": [
+        "きら",
+        "ほう",
+        "ほっ",
+        "ほつ"
+      ]
+    },
+    "strokes": 5,
+    "grade": 2,
+    "frequency_rank": 153,
+    "classical_radical_numbers": [
+      21
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "匕",
+        "meanings": [
+          "spoon",
+          "spoon or katakana hi radical (no. 21)"
+        ]
+      },
+      {
+        "symbol": "爿",
+        "meanings": [
+          "left-side kata radical (no. 90)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "北",
+        "written_furigana": "{北}(きた)",
+        "reading": "きた",
+        "meanings": [
+          "north"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0046",
+    "level": "N5",
+    "order": 46,
+    "source_order": 46,
+    "character": "午",
+    "meanings": [
+      "noon",
+      "sign of the horse",
+      "11AM-1PM",
+      "seventh sign of Chinese zodiac"
+    ],
+    "readings": {
+      "onyomi": [
+        "ゴ"
+      ],
+      "kunyomi": [
+        "うま"
+      ],
+      "nanori": []
+    },
+    "strokes": 4,
+    "grade": 2,
+    "frequency_rank": 154,
+    "classical_radical_numbers": [
+      24
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "ノ",
+        "meanings": []
+      },
+      {
+        "symbol": "干",
+        "meanings": [
+          "dry",
+          "parch",
+          "ebb"
+        ]
+      },
+      {
+        "symbol": "十",
+        "meanings": [
+          "ten"
+        ]
+      },
+      {
+        "symbol": "乞",
+        "meanings": [
+          "beg",
+          "invite",
+          "ask"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "午後",
+        "written_furigana": "{午後}(ごご)",
+        "reading": "ごご",
+        "meanings": [
+          "afternoon",
+          "P.M."
+        ]
+      },
+      {
+        "written_raw": "午前",
+        "written_furigana": "{午前}(ごぜん)",
+        "reading": "ごぜん",
+        "meanings": [
+          "morning",
+          "A.M."
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0047",
+    "level": "N5",
+    "order": 47,
+    "source_order": 47,
+    "character": "百",
+    "meanings": [
+      "hundred"
+    ],
+    "readings": {
+      "onyomi": [
+        "ヒャク",
+        "ビャク"
+      ],
+      "kunyomi": [
+        "もも"
+      ],
+      "nanori": [
+        "お",
+        "ど",
+        "どう",
+        "なり",
+        "ひゃっ",
+        "ひゅく",
+        "も",
+        "もんど",
+        "ゆう"
+      ]
+    },
+    "strokes": 6,
+    "grade": 1,
+    "frequency_rank": 163,
+    "classical_radical_numbers": [
+      106
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "白",
+        "meanings": [
+          "white"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "百",
+        "written_furigana": "{百}(ひゃく)",
+        "reading": "ひゃく",
+        "meanings": [
+          "hundred"
+        ]
+      },
+      {
+        "written_raw": "八百屋",
+        "written_furigana": "{八百屋}(やおや)",
+        "reading": "やおや",
+        "meanings": [
+          "greengrocer"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0048",
+    "level": "N5",
+    "order": 48,
+    "source_order": 48,
+    "character": "書",
+    "meanings": [
+      "write"
+    ],
+    "readings": {
+      "onyomi": [
+        "ショ"
+      ],
+      "kunyomi": [
+        "か.く",
+        "-が.き",
+        "-がき"
+      ],
+      "nanori": [
+        "かき"
+      ]
+    },
+    "strokes": 10,
+    "grade": 2,
+    "frequency_rank": 169,
+    "classical_radical_numbers": [
+      73
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "日",
+        "meanings": [
+          "day",
+          "sun",
+          "Japan"
+        ]
+      },
+      {
+        "symbol": "聿",
+        "meanings": [
+          "brush",
+          "finally",
+          "self"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "辞書",
+        "written_furigana": "{辞書}(じしょ)",
+        "reading": "じしょ",
+        "meanings": [
+          "dictionary"
+        ]
+      },
+      {
+        "written_raw": "図書館",
+        "written_furigana": "{図書館}(としょかん)",
+        "reading": "としょかん",
+        "meanings": [
+          "library"
+        ]
+      },
+      {
+        "written_raw": "葉書",
+        "written_furigana": "{葉書}(はがき)",
+        "reading": "はがき",
+        "meanings": [
+          "postcard"
+        ]
+      },
+      {
+        "written_raw": "書く",
+        "written_furigana": "{書}(か)く",
+        "reading": "かく",
+        "meanings": [
+          "to write"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0049",
+    "level": "N5",
+    "order": 49,
+    "source_order": 49,
+    "character": "先",
+    "meanings": [
+      "before",
+      "ahead",
+      "previous",
+      "future",
+      "precedence"
+    ],
+    "readings": {
+      "onyomi": [
+        "セン"
+      ],
+      "kunyomi": [
+        "さき",
+        "ま.ず"
+      ],
+      "nanori": [
+        "ぽん"
+      ]
+    },
+    "strokes": 6,
+    "grade": 1,
+    "frequency_rank": 173,
+    "classical_radical_numbers": [
+      10
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "ノ",
+        "meanings": []
+      },
+      {
+        "symbol": "土",
+        "meanings": [
+          "soil",
+          "earth",
+          "ground"
+        ]
+      },
+      {
+        "symbol": "儿",
+        "meanings": [
+          "legs radical (no. 10)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "先生",
+        "written_furigana": "{先生}(せんせい)",
+        "reading": "せんせい",
+        "meanings": [
+          "teacher",
+          "professor",
+          "master",
+          "doctor"
+        ]
+      },
+      {
+        "written_raw": "先週",
+        "written_furigana": "{先週}(せんしゅう)",
+        "reading": "せんしゅう",
+        "meanings": [
+          "last week"
+        ]
+      },
+      {
+        "written_raw": "先月",
+        "written_furigana": "{先月}(せんげつ)",
+        "reading": "せんげつ",
+        "meanings": [
+          "last month"
+        ]
+      },
+      {
+        "written_raw": "先",
+        "written_furigana": "{先}(さき)",
+        "reading": "さき",
+        "meanings": [
+          "future",
+          "recent",
+          "previous"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0050",
+    "level": "N5",
+    "order": 50,
+    "source_order": 50,
+    "character": "名",
+    "meanings": [
+      "name",
+      "noted",
+      "distinguished",
+      "reputation"
+    ],
+    "readings": {
+      "onyomi": [
+        "メイ",
+        "ミョウ"
+      ],
+      "kunyomi": [
+        "な",
+        "-な"
+      ],
+      "nanori": [
+        "と"
+      ]
+    },
+    "strokes": 6,
+    "grade": 1,
+    "frequency_rank": 177,
+    "classical_radical_numbers": [
+      30
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "口",
+        "meanings": [
+          "mouth"
+        ]
+      },
+      {
+        "symbol": "夕",
+        "meanings": [
+          "evening"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "名前",
+        "written_furigana": "{名前}(なまえ)",
+        "reading": "なまえ",
+        "meanings": [
+          "name"
+        ]
+      },
+      {
+        "written_raw": "片仮名",
+        "written_furigana": "{片仮名}(かたかな)",
+        "reading": "かたかな",
+        "meanings": [
+          "katakana"
+        ]
+      },
+      {
+        "written_raw": "平仮名",
+        "written_furigana": "{平仮名}(ひらがな)",
+        "reading": "ひらがな",
+        "meanings": [
+          "hiragana"
+        ]
+      },
+      {
+        "written_raw": "有名",
+        "written_furigana": "{有名}(ゆうめい)",
+        "reading": "ゆうめい",
+        "meanings": [
+          "famous"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0051",
+    "level": "N5",
+    "order": 51,
+    "source_order": 51,
+    "character": "川",
+    "meanings": [
+      "stream",
+      "river",
+      "river or three-stroke river radical (no. 47)"
+    ],
+    "readings": {
+      "onyomi": [
+        "セン"
+      ],
+      "kunyomi": [
+        "かわ"
+      ],
+      "nanori": [
+        "か",
+        "こ",
+        "さわ"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 181,
+    "classical_radical_numbers": [
+      47
+    ],
+    "radical_names": [
+      "さんぼんがわ"
+    ],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "川",
+        "written_furigana": "{川}(かわ)",
+        "reading": "かわ",
+        "meanings": [
+          "river"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0052",
+    "level": "N5",
+    "order": 52,
+    "source_order": 52,
+    "character": "千",
+    "meanings": [
+      "thousand"
+    ],
+    "readings": {
+      "onyomi": [
+        "セン"
+      ],
+      "kunyomi": [
+        "ち"
+      ],
+      "nanori": [
+        "かず",
+        "ゆき"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 195,
+    "classical_radical_numbers": [
+      24
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "ノ",
+        "meanings": []
+      },
+      {
+        "symbol": "十",
+        "meanings": [
+          "ten"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "千",
+        "written_furigana": "{千}(せん)",
+        "reading": "せん",
+        "meanings": [
+          "thousand"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0053",
+    "level": "N5",
+    "order": 53,
+    "source_order": 53,
+    "character": "水",
+    "meanings": [
+      "water"
+    ],
+    "readings": {
+      "onyomi": [
+        "スイ"
+      ],
+      "kunyomi": [
+        "みず",
+        "みず-"
+      ],
+      "nanori": [
+        "うず",
+        "ずみ",
+        "つ",
+        "ど",
+        "み",
+        "みさ",
+        "みつ",
+        "みな",
+        "みん"
+      ]
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 223,
+    "classical_radical_numbers": [
+      85
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "水",
+        "written_furigana": "{水}(みず)",
+        "reading": "みず",
+        "meanings": [
+          "water"
+        ]
+      },
+      {
+        "written_raw": "水曜日",
+        "written_furigana": "{水曜日}(すいようび)",
+        "reading": "すいようび",
+        "meanings": [
+          "Wednesday"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0054",
+    "level": "N5",
+    "order": 54,
+    "source_order": 54,
+    "character": "半",
+    "meanings": [
+      "half",
+      "middle",
+      "odd number",
+      "semi-",
+      "part-"
+    ],
+    "readings": {
+      "onyomi": [
+        "ハン"
+      ],
+      "kunyomi": [
+        "なか.ば"
+      ],
+      "nanori": [
+        "は"
+      ]
+    },
+    "strokes": 5,
+    "grade": 2,
+    "frequency_rank": 224,
+    "classical_radical_numbers": [
+      24
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "｜",
+        "meanings": []
+      },
+      {
+        "symbol": "二",
+        "meanings": [
+          "two",
+          "two radical (no. 7)"
+        ]
+      },
+      {
+        "symbol": "并",
+        "meanings": [
+          "put together"
+        ]
+      },
+      {
+        "symbol": "十",
+        "meanings": [
+          "ten"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "半",
+        "written_furigana": "{半}(はん)",
+        "reading": "はん",
+        "meanings": [
+          "half (e.g., にじはん | half-past two)"
+        ]
+      },
+      {
+        "written_raw": "半分",
+        "written_furigana": "{半分}(はんぶん)",
+        "reading": "はんぶん",
+        "meanings": [
+          "half"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0055",
+    "level": "N5",
+    "order": 55,
+    "source_order": 55,
+    "character": "男",
+    "meanings": [
+      "male"
+    ],
+    "readings": {
+      "onyomi": [
+        "ダン",
+        "ナン"
+      ],
+      "kunyomi": [
+        "おとこ",
+        "お"
+      ],
+      "nanori": [
+        "み"
+      ]
+    },
+    "strokes": 7,
+    "grade": 1,
+    "frequency_rank": 240,
+    "classical_radical_numbers": [
+      102
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "田",
+        "meanings": [
+          "rice field",
+          "rice paddy"
+        ]
+      },
+      {
+        "symbol": "力",
+        "meanings": [
+          "power",
+          "strength",
+          "strong"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "男の子",
+        "written_furigana": "{男}(おとこ)の{子}(こ)",
+        "reading": "おとこのこ",
+        "meanings": [
+          "boy"
+        ]
+      },
+      {
+        "written_raw": "男",
+        "written_furigana": "{男}(おとこ)",
+        "reading": "おとこ",
+        "meanings": [
+          "man",
+          "male"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0056",
+    "level": "N5",
+    "order": 56,
+    "source_order": 56,
+    "character": "西",
+    "meanings": [
+      "west",
+      "Spain"
+    ],
+    "readings": {
+      "onyomi": [
+        "セイ",
+        "サイ",
+        "ス"
+      ],
+      "kunyomi": [
+        "にし"
+      ],
+      "nanori": [
+        "いり",
+        "ひし",
+        "むら"
+      ]
+    },
+    "strokes": 6,
+    "grade": 2,
+    "frequency_rank": 259,
+    "classical_radical_numbers": [
+      146
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "西",
+        "written_furigana": "{西}(にし)",
+        "reading": "にし",
+        "meanings": [
+          "west"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0057",
+    "level": "N5",
+    "order": 57,
+    "source_order": 57,
+    "character": "電",
+    "meanings": [
+      "electricity"
+    ],
+    "readings": {
+      "onyomi": [
+        "デン"
+      ],
+      "kunyomi": [],
+      "nanori": []
+    },
+    "strokes": 13,
+    "grade": 2,
+    "frequency_rank": 268,
+    "classical_radical_numbers": [
+      173
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "雨",
+        "meanings": [
+          "rain"
+        ]
+      },
+      {
+        "symbol": "田",
+        "meanings": [
+          "rice field",
+          "rice paddy"
+        ]
+      },
+      {
+        "symbol": "乙",
+        "meanings": [
+          "the latter",
+          "duplicate",
+          "strange"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "電話",
+        "written_furigana": "{電話}(でんわ)",
+        "reading": "でんわ",
+        "meanings": [
+          "a telephone"
+        ]
+      },
+      {
+        "written_raw": "電気",
+        "written_furigana": "{電気}(でんき)",
+        "reading": "でんき",
+        "meanings": [
+          "electricity",
+          "(electric) light"
+        ]
+      },
+      {
+        "written_raw": "電車",
+        "written_furigana": "{電車}(でんしゃ)",
+        "reading": "でんしゃ",
+        "meanings": [
+          "electric train"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0058",
+    "level": "N5",
+    "order": 58,
+    "source_order": 58,
+    "character": "校",
+    "meanings": [
+      "exam",
+      "school",
+      "printing",
+      "proof",
+      "correction"
+    ],
+    "readings": {
+      "onyomi": [
+        "コウ",
+        "キョウ"
+      ],
+      "kunyomi": [],
+      "nanori": [
+        "めん"
+      ]
+    },
+    "strokes": 10,
+    "grade": 1,
+    "frequency_rank": 294,
+    "classical_radical_numbers": [
+      75
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "父",
+        "meanings": [
+          "father"
+        ]
+      },
+      {
+        "symbol": "木",
+        "meanings": [
+          "tree",
+          "wood"
+        ]
+      },
+      {
+        "symbol": "亠",
+        "meanings": [
+          "kettle lid radical (no. 8)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "学校",
+        "written_furigana": "{学校}(がっこう)",
+        "reading": "がっこう",
+        "meanings": [
+          "a school"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0059",
+    "level": "N5",
+    "order": 59,
+    "source_order": 59,
+    "character": "語",
+    "meanings": [
+      "word",
+      "speech",
+      "language"
+    ],
+    "readings": {
+      "onyomi": [
+        "ゴ"
+      ],
+      "kunyomi": [
+        "かた.る",
+        "かた.らう"
+      ],
+      "nanori": []
+    },
+    "strokes": 14,
+    "grade": 2,
+    "frequency_rank": 301,
+    "classical_radical_numbers": [
+      149
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "言",
+        "meanings": [
+          "say",
+          "word"
+        ]
+      },
+      {
+        "symbol": "口",
+        "meanings": [
+          "mouth"
+        ]
+      },
+      {
+        "symbol": "五",
+        "meanings": [
+          "five"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "英語",
+        "written_furigana": "{英語}(えいご)",
+        "reading": "えいご",
+        "meanings": [
+          "English (language)"
+        ]
+      },
+      {
+        "written_raw": "〜語",
+        "written_furigana": "〜{語}(ご)",
+        "reading": "〜ご",
+        "meanings": [
+          "word",
+          "language"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0060",
+    "level": "N5",
+    "order": 60,
+    "source_order": 60,
+    "character": "土",
+    "meanings": [
+      "soil",
+      "earth",
+      "ground",
+      "Turkey"
+    ],
+    "readings": {
+      "onyomi": [
+        "ド",
+        "ト"
+      ],
+      "kunyomi": [
+        "つち"
+      ],
+      "nanori": [
+        "つく",
+        "は",
+        "ひじ"
+      ]
+    },
+    "strokes": 3,
+    "grade": 1,
+    "frequency_rank": 307,
+    "classical_radical_numbers": [
+      32
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "土曜日",
+        "written_furigana": "{土曜日}(どようび)",
+        "reading": "どようび",
+        "meanings": [
+          "Saturday"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0061",
+    "level": "N5",
+    "order": 61,
+    "source_order": 61,
+    "character": "木",
+    "meanings": [
+      "tree",
+      "wood"
+    ],
+    "readings": {
+      "onyomi": [
+        "ボク",
+        "モク"
+      ],
+      "kunyomi": [
+        "き",
+        "こ-"
+      ],
+      "nanori": [
+        "ぐ",
+        "も",
+        "もと"
+      ]
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 317,
+    "classical_radical_numbers": [
+      75
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "木曜日",
+        "written_furigana": "{木曜日}(もくようび)",
+        "reading": "もくようび",
+        "meanings": [
+          "Thursday"
+        ]
+      },
+      {
+        "written_raw": "木",
+        "written_furigana": "{木}(き)",
+        "reading": "き",
+        "meanings": [
+          "tree",
+          "wood",
+          "timber"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0062",
+    "level": "N5",
+    "order": 62,
+    "source_order": 62,
+    "character": "聞",
+    "meanings": [
+      "hear",
+      "ask",
+      "listen"
+    ],
+    "readings": {
+      "onyomi": [
+        "ブン",
+        "モン"
+      ],
+      "kunyomi": [
+        "き.く",
+        "き.こえる"
+      ],
+      "nanori": []
+    },
+    "strokes": 14,
+    "grade": 2,
+    "frequency_rank": 319,
+    "classical_radical_numbers": [
+      128
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "耳",
+        "meanings": [
+          "ear"
+        ]
+      },
+      {
+        "symbol": "門",
+        "meanings": [
+          "gate",
+          "counter for cannons"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "新聞",
+        "written_furigana": "{新聞}(しんぶん)",
+        "reading": "しんぶん",
+        "meanings": [
+          "newspaper"
+        ]
+      },
+      {
+        "written_raw": "聞く",
+        "written_furigana": "{聞}(き)く",
+        "reading": "きく",
+        "meanings": [
+          "to hear",
+          "to listen",
+          "to ask"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0063",
+    "level": "N5",
+    "order": 63,
+    "source_order": 63,
+    "character": "食",
+    "meanings": [
+      "eat",
+      "food"
+    ],
+    "readings": {
+      "onyomi": [
+        "ショク",
+        "ジキ"
+      ],
+      "kunyomi": [
+        "く.う",
+        "く.らう",
+        "た.べる",
+        "は.む"
+      ],
+      "nanori": [
+        "ぐい"
+      ]
+    },
+    "strokes": 9,
+    "grade": 2,
+    "frequency_rank": 328,
+    "classical_radical_numbers": [
+      184
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "食べ物",
+        "written_furigana": "{食}(た)べ{物}(もの)",
+        "reading": "たべもの",
+        "meanings": [
+          "food"
+        ]
+      },
+      {
+        "written_raw": "食堂",
+        "written_furigana": "{食堂}(しょくどう)",
+        "reading": "しょくどう",
+        "meanings": [
+          "cafeteria",
+          "dining hall"
+        ]
+      },
+      {
+        "written_raw": "食べる",
+        "written_furigana": "{食}(た)べる",
+        "reading": "たべる",
+        "meanings": [
+          "to eat"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0064",
+    "level": "N5",
+    "order": 64,
+    "source_order": 64,
+    "character": "車",
+    "meanings": [
+      "car"
+    ],
+    "readings": {
+      "onyomi": [
+        "シャ"
+      ],
+      "kunyomi": [
+        "くるま"
+      ],
+      "nanori": [
+        "くら",
+        "くろま"
+      ]
+    },
+    "strokes": 7,
+    "grade": 1,
+    "frequency_rank": 333,
+    "classical_radical_numbers": [
+      159
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "自転車",
+        "written_furigana": "{自転車}(じてんしゃ)",
+        "reading": "じてんしゃ",
+        "meanings": [
+          "bicycle"
+        ]
+      },
+      {
+        "written_raw": "電車",
+        "written_furigana": "{電車}(でんしゃ)",
+        "reading": "でんしゃ",
+        "meanings": [
+          "electric train"
+        ]
+      },
+      {
+        "written_raw": "車",
+        "written_furigana": "{車}(くるま)",
+        "reading": "くるま",
+        "meanings": [
+          "car",
+          "vehicle"
+        ]
+      },
+      {
+        "written_raw": "自動車",
+        "written_furigana": "{自動車}(じどうしゃ)",
+        "reading": "じどうしゃ",
+        "meanings": [
+          "automobile"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0065",
+    "level": "N5",
+    "order": 65,
+    "source_order": 65,
+    "character": "何",
+    "meanings": [
+      "what"
+    ],
+    "readings": {
+      "onyomi": [
+        "カ"
+      ],
+      "kunyomi": [
+        "なに",
+        "なん",
+        "なに-",
+        "なん-"
+      ],
+      "nanori": [
+        "あが"
+      ]
+    },
+    "strokes": 7,
+    "grade": 2,
+    "frequency_rank": 340,
+    "classical_radical_numbers": [
+      9
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "化",
+        "meanings": [
+          "change",
+          "take the form of",
+          "influence"
+        ]
+      },
+      {
+        "symbol": "口",
+        "meanings": [
+          "mouth"
+        ]
+      },
+      {
+        "symbol": "亅",
+        "meanings": [
+          "feathered stick",
+          "barb radical (no. 6)"
+        ]
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "何",
+        "written_furigana": "{何}(なん)",
+        "reading": "なん",
+        "meanings": [
+          "what"
+        ]
+      },
+      {
+        "written_raw": "何〜",
+        "written_furigana": "{何}(なん)〜",
+        "reading": "なん〜",
+        "meanings": [
+          "what sort of ~"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0066",
+    "level": "N5",
+    "order": 66,
+    "source_order": 66,
+    "character": "南",
+    "meanings": [
+      "south"
+    ],
+    "readings": {
+      "onyomi": [
+        "ナン",
+        "ナ"
+      ],
+      "kunyomi": [
+        "みなみ"
+      ],
+      "nanori": [
+        "なみ",
+        "は",
+        "みな",
+        "みまみ"
+      ]
+    },
+    "strokes": 9,
+    "grade": 2,
+    "frequency_rank": 341,
+    "classical_radical_numbers": [
+      24
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "干",
+        "meanings": [
+          "dry",
+          "parch",
+          "ebb"
+        ]
+      },
+      {
+        "symbol": "十",
+        "meanings": [
+          "ten"
+        ]
+      },
+      {
+        "symbol": "并",
+        "meanings": [
+          "put together"
+        ]
+      },
+      {
+        "symbol": "冂",
+        "meanings": [
+          "upside-down box radical (no. 13)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "南",
+        "written_furigana": "{南}(みなみ)",
+        "reading": "みなみ",
+        "meanings": [
+          "South"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0067",
+    "level": "N5",
+    "order": 67,
+    "source_order": 67,
+    "character": "万",
+    "meanings": [
+      "ten thousand",
+      "10,000"
+    ],
+    "readings": {
+      "onyomi": [
+        "マン",
+        "バン"
+      ],
+      "kunyomi": [
+        "よろず"
+      ],
+      "nanori": [
+        "かず",
+        "ま",
+        "ゆる"
+      ]
+    },
+    "strokes": 3,
+    "grade": 2,
+    "frequency_rank": 375,
+    "classical_radical_numbers": [
+      1
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "｜",
+        "meanings": []
+      },
+      {
+        "symbol": "ノ",
+        "meanings": []
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "万",
+        "written_furigana": "{万}(まん)",
+        "reading": "まん",
+        "meanings": [
+          "ten thousand"
+        ]
+      },
+      {
+        "written_raw": "万年筆",
+        "written_furigana": "{万年筆}(まんねんひつ)",
+        "reading": "まんねんひつ",
+        "meanings": [
+          "fountain pen"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0068",
+    "level": "N5",
+    "order": 68,
+    "source_order": 68,
+    "character": "毎",
+    "meanings": [
+      "every"
+    ],
+    "readings": {
+      "onyomi": [
+        "マイ"
+      ],
+      "kunyomi": [
+        "ごと",
+        "-ごと.に"
+      ],
+      "nanori": [
+        "つね"
+      ]
+    },
+    "strokes": 6,
+    "grade": 2,
+    "frequency_rank": 436,
+    "classical_radical_numbers": [
+      80
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "母",
+        "meanings": [
+          "mother"
+        ]
+      },
+      {
+        "symbol": "毋",
+        "meanings": [
+          "do not",
+          "must not",
+          "be not"
+        ]
+      },
+      {
+        "symbol": "乞",
+        "meanings": [
+          "beg",
+          "invite",
+          "ask"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "毎日",
+        "written_furigana": "{毎日}(まいにち)",
+        "reading": "まいにち",
+        "meanings": [
+          "every day"
+        ]
+      },
+      {
+        "written_raw": "毎晩",
+        "written_furigana": "{毎晩}(まいばん)",
+        "reading": "まいばん",
+        "meanings": [
+          "every night"
+        ]
+      },
+      {
+        "written_raw": "毎週",
+        "written_furigana": "{毎週}(まいしゅう)",
+        "reading": "まいしゅう",
+        "meanings": [
+          "every week"
+        ]
+      },
+      {
+        "written_raw": "毎朝",
+        "written_furigana": "{毎朝}(まいあさ)",
+        "reading": "まいあさ",
+        "meanings": [
+          "every morning"
+        ]
+      },
+      {
+        "written_raw": "毎月",
+        "written_furigana": "{毎月}(まいげつ)",
+        "reading": "まいげつ",
+        "meanings": [
+          "every month",
+          "monthly"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0069",
+    "level": "N5",
+    "order": 69,
+    "source_order": 69,
+    "character": "白",
+    "meanings": [
+      "white"
+    ],
+    "readings": {
+      "onyomi": [
+        "ハク",
+        "ビャク"
+      ],
+      "kunyomi": [
+        "しろ",
+        "しら-",
+        "しろ.い"
+      ],
+      "nanori": [
+        "あき",
+        "か",
+        "はっ"
+      ]
+    },
+    "strokes": 5,
+    "grade": 1,
+    "frequency_rank": 483,
+    "classical_radical_numbers": [
+      106
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "面白い",
+        "written_furigana": "{面白}(おもしろ)い",
+        "reading": "おもしろい",
+        "meanings": [
+          "interesting",
+          "amusing"
+        ]
+      },
+      {
+        "written_raw": "白い",
+        "written_furigana": "{白}(しろ)い",
+        "reading": "しろい",
+        "meanings": [
+          "white"
+        ]
+      },
+      {
+        "written_raw": "白",
+        "written_furigana": "{白}(しろ)",
+        "reading": "しろ",
+        "meanings": [
+          "white"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0070",
+    "level": "N5",
+    "order": 70,
+    "source_order": 70,
+    "character": "天",
+    "meanings": [
+      "heavens",
+      "sky",
+      "imperial"
+    ],
+    "readings": {
+      "onyomi": [
+        "テン"
+      ],
+      "kunyomi": [
+        "あまつ",
+        "あめ",
+        "あま-"
+      ],
+      "nanori": [
+        "あき",
+        "あも",
+        "た",
+        "たかし",
+        "て",
+        "なま"
+      ]
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 512,
+    "classical_radical_numbers": [
+      37
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "大",
+        "meanings": [
+          "large",
+          "big"
+        ]
+      },
+      {
+        "symbol": "二",
+        "meanings": [
+          "two",
+          "two radical (no. 7)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "天気",
+        "written_furigana": "{天気}(てんき)",
+        "reading": "てんき",
+        "meanings": [
+          "weather"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0071",
+    "level": "N5",
+    "order": 71,
+    "source_order": 71,
+    "character": "母",
+    "meanings": [
+      "mother"
+    ],
+    "readings": {
+      "onyomi": [
+        "ボ"
+      ],
+      "kunyomi": [
+        "はは",
+        "も"
+      ],
+      "nanori": []
+    },
+    "strokes": 5,
+    "grade": 2,
+    "frequency_rank": 570,
+    "classical_radical_numbers": [
+      80
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "毋",
+        "meanings": [
+          "do not",
+          "must not",
+          "be not"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "お母さん",
+        "written_furigana": "お{母}(かあ)さん",
+        "reading": "おかあさん",
+        "meanings": [
+          "mother (formal)"
+        ]
+      },
+      {
+        "written_raw": "母",
+        "written_furigana": "{母}(はは)",
+        "reading": "はは",
+        "meanings": [
+          "(my) mother"
+        ]
+      },
+      {
+        "written_raw": "伯母さん",
+        "written_furigana": "{伯母}(おば)さん",
+        "reading": "おばさん",
+        "meanings": [
+          "aunt"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0072",
+    "level": "N5",
+    "order": 72,
+    "source_order": 72,
+    "character": "火",
+    "meanings": [
+      "fire"
+    ],
+    "readings": {
+      "onyomi": [
+        "カ"
+      ],
+      "kunyomi": [
+        "ひ",
+        "-び",
+        "ほ-"
+      ],
+      "nanori": []
+    },
+    "strokes": 4,
+    "grade": 1,
+    "frequency_rank": 574,
+    "classical_radical_numbers": [
+      86
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "火曜日",
+        "written_furigana": "{火曜日}(かようび)",
+        "reading": "かようび",
+        "meanings": [
+          "Tuesday"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0073",
+    "level": "N5",
+    "order": 73,
+    "source_order": 73,
+    "character": "右",
+    "meanings": [
+      "right"
+    ],
+    "readings": {
+      "onyomi": [
+        "ウ",
+        "ユウ"
+      ],
+      "kunyomi": [
+        "みぎ"
+      ],
+      "nanori": [
+        "あき",
+        "すけ"
+      ]
+    },
+    "strokes": 5,
+    "grade": 1,
+    "frequency_rank": 602,
+    "classical_radical_numbers": [
+      30
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "ノ",
+        "meanings": []
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "口",
+        "meanings": [
+          "mouth"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "右",
+        "written_furigana": "{右}(みぎ)",
+        "reading": "みぎ",
+        "meanings": [
+          "right hand side"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0074",
+    "level": "N5",
+    "order": 74,
+    "source_order": 74,
+    "character": "読",
+    "meanings": [
+      "read"
+    ],
+    "readings": {
+      "onyomi": [
+        "ドク",
+        "トク",
+        "トウ"
+      ],
+      "kunyomi": [
+        "よ.む",
+        "-よ.み"
+      ],
+      "nanori": [
+        "よみ"
+      ]
+    },
+    "strokes": 14,
+    "grade": 2,
+    "frequency_rank": 618,
+    "classical_radical_numbers": [
+      149
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "言",
+        "meanings": [
+          "say",
+          "word"
+        ]
+      },
+      {
+        "symbol": "士",
+        "meanings": [
+          "gentleman",
+          "scholar",
+          "samurai"
+        ]
+      },
+      {
+        "symbol": "儿",
+        "meanings": [
+          "legs radical (no. 10)"
+        ]
+      },
+      {
+        "symbol": "冖",
+        "meanings": [
+          "wa-shaped crown radical (no. 14)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "読む",
+        "written_furigana": "{読}(よ)む",
+        "reading": "よむ",
+        "meanings": [
+          "to read"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0075",
+    "level": "N5",
+    "order": 75,
+    "source_order": 75,
+    "character": "友",
+    "meanings": [
+      "friend"
+    ],
+    "readings": {
+      "onyomi": [
+        "ユウ"
+      ],
+      "kunyomi": [
+        "とも"
+      ],
+      "nanori": [
+        "う",
+        "ど",
+        "ゆ"
+      ]
+    },
+    "strokes": 4,
+    "grade": 2,
+    "frequency_rank": 622,
+    "classical_radical_numbers": [
+      29
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "ノ",
+        "meanings": []
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "又",
+        "meanings": [
+          "or again",
+          "furthermore",
+          "on the other hand"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "友達",
+        "written_furigana": "{友達}(ともだち)",
+        "reading": "ともだち",
+        "meanings": [
+          "friend"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0076",
+    "level": "N5",
+    "order": 76,
+    "source_order": 76,
+    "character": "左",
+    "meanings": [
+      "left"
+    ],
+    "readings": {
+      "onyomi": [
+        "サ",
+        "シャ"
+      ],
+      "kunyomi": [
+        "ひだり"
+      ],
+      "nanori": [
+        "そ"
+      ]
+    },
+    "strokes": 5,
+    "grade": 1,
+    "frequency_rank": 630,
+    "classical_radical_numbers": [
+      48
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "ノ",
+        "meanings": []
+      },
+      {
+        "symbol": "一",
+        "meanings": [
+          "one",
+          "one radical (no.1)"
+        ]
+      },
+      {
+        "symbol": "工",
+        "meanings": [
+          "craft",
+          "construction",
+          "katakana e radical (no. 48)"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "左",
+        "written_furigana": "{左}(ひだり)",
+        "reading": "ひだり",
+        "meanings": [
+          "left hand side"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0077",
+    "level": "N5",
+    "order": 77,
+    "source_order": 77,
+    "character": "休",
+    "meanings": [
+      "rest",
+      "day off",
+      "retire",
+      "sleep"
+    ],
+    "readings": {
+      "onyomi": [
+        "キュウ"
+      ],
+      "kunyomi": [
+        "やす.む",
+        "やす.まる",
+        "やす.める"
+      ],
+      "nanori": []
+    },
+    "strokes": 6,
+    "grade": 1,
+    "frequency_rank": 642,
+    "classical_radical_numbers": [
+      9
+    ],
+    "radical_names": [],
+    "components": [
+      {
+        "symbol": "化",
+        "meanings": [
+          "change",
+          "take the form of",
+          "influence"
+        ]
+      },
+      {
+        "symbol": "木",
+        "meanings": [
+          "tree",
+          "wood"
+        ]
+      }
+    ],
+    "atomic_component": false,
+    "example_words": [
+      {
+        "written_raw": "休み",
+        "written_furigana": "{休}(やす)み",
+        "reading": "やすみ",
+        "meanings": [
+          "holiday",
+          "day off",
+          "absence"
+        ]
+      },
+      {
+        "written_raw": "夏休み",
+        "written_furigana": "{夏休}(なつやす)み",
+        "reading": "なつやすみ",
+        "meanings": [
+          "summer vacation"
+        ]
+      },
+      {
+        "written_raw": "休む",
+        "written_furigana": "{休}(やす)む",
+        "reading": "やすむ",
+        "meanings": [
+          "to rest",
+          "to have a break",
+          "to get time off"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0078",
+    "level": "N5",
+    "order": 78,
+    "source_order": 78,
+    "character": "父",
+    "meanings": [
+      "father"
+    ],
+    "readings": {
+      "onyomi": [
+        "フ"
+      ],
+      "kunyomi": [
+        "ちち"
+      ],
+      "nanori": []
+    },
+    "strokes": 4,
+    "grade": 2,
+    "frequency_rank": 646,
+    "classical_radical_numbers": [
+      88
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "お父さん",
+        "written_furigana": "お{父}(とう)さん",
+        "reading": "おとうさん",
+        "meanings": [
+          "father (formal)"
+        ]
+      },
+      {
+        "written_raw": "父",
+        "written_furigana": "{父}(ちち)",
+        "reading": "ちち",
+        "meanings": [
+          "(my) father"
+        ]
+      },
+      {
+        "written_raw": "伯父",
+        "written_furigana": "{伯父}(おじさん)",
+        "reading": "おじさん",
+        "meanings": [
+          "uncle",
+          "middle-aged man"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  },
+  {
+    "id": "n5-kanji-0079",
+    "level": "N5",
+    "order": 79,
+    "source_order": 79,
+    "character": "雨",
+    "meanings": [
+      "rain"
+    ],
+    "readings": {
+      "onyomi": [
+        "ウ"
+      ],
+      "kunyomi": [
+        "あめ",
+        "あま-",
+        "-さめ"
+      ],
+      "nanori": []
+    },
+    "strokes": 8,
+    "grade": 1,
+    "frequency_rank": 950,
+    "classical_radical_numbers": [
+      173
+    ],
+    "radical_names": [],
+    "components": [],
+    "atomic_component": true,
+    "example_words": [
+      {
+        "written_raw": "雨",
+        "written_furigana": "{雨}(あめ)",
+        "reading": "あめ",
+        "meanings": [
+          "rain"
+        ]
+      }
+    ],
+    "provenance": {
+      "level_map": "Bluskyo/JLPT_Vocabulary (Jonathan Waller/Tanos)",
+      "dictionary": "KANJIDIC2",
+      "components": "KRADFILE visible components"
+    }
+  }
+]
