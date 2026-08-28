@@ -6,6 +6,7 @@
 - Use sourced, sense-linked examples. Do not fabricate examples or match them by raw substring.
 - Do not commit generated data, decks, caches or release artifacts.
 - Preserve deterministic output: stable ordering, timestamps, serialization and checksums.
+- Add output formats through `japanese_flashcard_curator/exporters/`; implement both `export()` and structural `validate()`, then register the exporter.
 - Update `SOURCES.md`, `NOTICE.md` and `docs/SCHEMA.md` when provenance or fields change.
 - Before committing, run unit tests plus `all` and `verify` for every affected level.
 - Publish distributable files only through `.github/workflows/release.yml`.

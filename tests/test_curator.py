@@ -5,6 +5,8 @@ import zipfile
 from pathlib import Path
 
 import flashcard_curator as curator
+from japanese_flashcard_curator.exporters import available_formats
+from japanese_flashcard_curator.exporters.anki import AnkiExporter, mochi_furigana_to_html
 
 
 class FuriganaTests(unittest.TestCase):
@@ -26,6 +28,53 @@ class FuriganaTests(unittest.TestCase):
 
 
 class FormatTests(unittest.TestCase):
+    @staticmethod
+    def sample_vocabulary():
+        return {
+            "id": "n5-vocab-0001",
+            "level": "N5",
+            "order": 1,
+            "written": {
+                "without_furigana": "食べる",
+                "with_furigana": "{食}(た)べる",
+                "lookup_text": "食べる",
+            },
+            "reading": {"primary": "たべる"},
+            "meanings": ["to eat"],
+            "parts_of_speech": [{"label": "Ichidan verb"}],
+            "common": True,
+            "examples": [
+                {
+                    "japanese_raw": "寿司を食べる。",
+                    "english": "I eat sushi.",
+                }
+            ],
+            "provenance": {"dictionary_entry_id": "1358280"},
+        }
+
+    @staticmethod
+    def sample_kanji():
+        return {
+            "id": "n5-kanji-0001",
+            "level": "N5",
+            "order": 1,
+            "character": "食",
+            "meanings": ["eat", "food"],
+            "readings": {"onyomi": ["ショク"], "kunyomi": ["た.べる"]},
+            "strokes": 9,
+            "grade": 2,
+            "frequency_rank": 328,
+            "components": [{"symbol": "人", "meanings": ["person"]}],
+            "example_words": [
+                {
+                    "written_raw": "食べる",
+                    "written_furigana": "{食}(た)べる",
+                    "reading": "たべる",
+                    "meanings": ["to eat"],
+                }
+            ],
+        }
+
     def test_variant_split(self):
         self.assertEqual(curator.split_variants("足; 脚"), ["足", "脚"])
 
@@ -45,6 +94,28 @@ class FormatTests(unittest.TestCase):
                 root = curator.decode_transit_map(json.loads(archive.read("data.json")))
             cards = curator.decode_transit_map(root["decks"][0])["cards"]
             self.assertEqual([curator.decode_transit_map(c)["pos"] for c in cards], ["000001", "000002"])
+
+    def test_exporter_registry(self):
+        self.assertEqual(available_formats(), ("anki", "mochi"))
+
+    def test_anki_ruby_conversion(self):
+        self.assertEqual(
+            mochi_furigana_to_html("{取}(と)り{替}(か)える", "取り替える", "とりかえる"),
+            "<ruby>取<rt>と</rt></ruby>り<ruby>替<rt>か</rt></ruby>える",
+        )
+
+    def test_anki_packages_are_valid_and_deterministic(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            exporter = AnkiExporter()
+            artifacts = exporter.export("N5", [self.sample_vocabulary()], [self.sample_kanji()], root)
+            first = {artifact.path.name: artifact.path.read_bytes() for artifact in artifacts}
+            for artifact in artifacts:
+                self.assertEqual(exporter.validate(artifact), [])
+                with zipfile.ZipFile(artifact.path) as archive:
+                    self.assertEqual(archive.namelist(), ["collection.anki2", "media"])
+            artifacts = exporter.export("N5", [self.sample_vocabulary()], [self.sample_kanji()], root)
+            self.assertEqual(first, {artifact.path.name: artifact.path.read_bytes() for artifact in artifacts})
 
     def test_data_archive_metadata_is_deterministic(self):
         with tempfile.TemporaryDirectory() as directory:

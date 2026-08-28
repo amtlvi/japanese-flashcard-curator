@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproducibly curate JLPT data and export deterministic Mochi decks."""
+"""Reproducibly curate JLPT data and export deterministic flashcard decks."""
 
 from __future__ import annotations
 
@@ -15,7 +15,16 @@ import urllib.request
 import zipfile
 from collections import defaultdict
 from pathlib import Path
-from typing import Any, Iterable, Sequence
+from typing import Any, Sequence
+
+from japanese_flashcard_curator.exporters import (
+    DeckArtifact,
+    available_formats,
+    decode_transit_map,
+    get_exporter,
+    select_exporters,
+    write_mochi,
+)
 
 
 ROOT = Path(__file__).resolve().parent
@@ -442,99 +451,6 @@ def kanji_records(
     return records
 
 
-def transit_map(items: Sequence[tuple[str, object]]) -> list[object]:
-    out: list[object] = ["^ "]
-    for key, value in items:
-        out.extend((f"~:{key}", value))
-    return out
-
-
-def transit_string(value: str) -> str:
-    return f"~{value}" if value.startswith(("~", "^", "`")) else value
-
-
-def raw_code_block(values: Iterable[str]) -> list[str]:
-    cleaned = list(dict.fromkeys(" ".join(value.split()) for value in values if value.strip()))
-    return ["```text", *(cleaned or ["(no sourced example available)"]), "```"]
-
-
-def vocabulary_card(record: dict[str, Any]) -> str:
-    lines = [f"# {record['written']['without_furigana']}", "", "---", "", f"# {record['written']['with_furigana']}"]
-    lines += ["", f"**Reading:** {record['reading']['primary']}", "", "**Meaning**", ""]
-    lines += [f"- {meaning}" for meaning in record["meanings"]]
-    if record["parts_of_speech"]:
-        lines += ["", "**Part of speech:** " + "; ".join(p["label"] for p in record["parts_of_speech"])]
-    if record["examples"]:
-        lines += ["", "**Examples**", ""]
-        for example in record["examples"]:
-            lines += [example["japanese_furigana"], f"_{example['english']}_", ""]
-        while lines and not lines[-1]:
-            lines.pop()
-    lines += ["", "**Copyable Japanese (raw)**", ""]
-    lines += raw_code_block(example["japanese_raw"] for example in record["examples"])
-    if not record["examples"]:
-        lines += ["", f"Lookup: `{record['written']['lookup_text']}`"]
-    lines += ["", f"JLPT {record['level']} · Order {record['order']} · {'Common' if record['common'] else 'Standard'}"]
-    return "\n".join(lines)
-
-
-def kanji_card(record: dict[str, Any]) -> str:
-    lines = [f"# {record['character']}", "", "---", "", f"# {record['character']}"]
-    lines += ["", "**Meanings:** " + "; ".join(record["meanings"])]
-    if record["readings"]["onyomi"]:
-        lines += ["", "**On’yomi:** " + "、".join(record["readings"]["onyomi"])]
-    if record["readings"]["kunyomi"]:
-        lines += ["", "**Kun’yomi:** " + "、".join(record["readings"]["kunyomi"])]
-    stats = [f"Strokes: {record['strokes']}"]
-    if record["grade"] is not None:
-        stats.append(f"Grade: {record['grade']}")
-    if record["frequency_rank"] is not None:
-        stats.append(f"Frequency: #{record['frequency_rank']}")
-    lines += ["", " · ".join(stats)]
-    lines += ["", "**Visible components (KRADFILE):**"]
-    if record["components"]:
-        lines += [
-            "、".join(
-                component["symbol"]
-                + (f" ({', '.join(component['meanings'])})" if component["meanings"] else "")
-                for component in record["components"]
-            )
-        ]
-    else:
-        lines += ["Atomic in KRADFILE"]
-    if record["example_words"]:
-        lines += ["", "**Example words**", ""]
-        for word in record["example_words"]:
-            lines.append(f"- {word['written_furigana']} — {'; '.join(word['meanings'])}")
-    lines += ["", "**Copyable Japanese (raw)**", ""]
-    lines += raw_code_block([record["character"], *(w["written_raw"] for w in record["example_words"])])
-    lines += ["", f"JLPT {record['level']} · Frequency order {record['order']}"]
-    return "\n".join(lines)
-
-
-def write_mochi(path: Path, decks: Sequence[tuple[str, Sequence[str]]]) -> None:
-    encoded_decks = []
-    for deck_name, cards in decks:
-        width = max(6, len(str(len(cards))))
-        encoded_cards = [
-            transit_map((("content", transit_string(content)), ("pos", f"{index:0{width}d}")))
-            for index, content in enumerate(cards, start=1)
-        ]
-        encoded_decks.append(
-            transit_map((("name", transit_string(deck_name)), ("cards", encoded_cards)))
-        )
-    payload = transit_map((("version", 2), ("decks", encoded_decks)))
-    data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
-    path.parent.mkdir(parents=True, exist_ok=True)
-    info = zipfile.ZipInfo("data.json", date_time=(1980, 1, 1, 0, 0, 0))
-    info.compress_type = zipfile.ZIP_DEFLATED
-    info.external_attr = 0o600 << 16
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    with zipfile.ZipFile(temporary, "w") as archive:
-        archive.writestr(info, data)
-    temporary.replace(path)
-
-
 def write_data_archive(path: Path, level: str) -> None:
     """Package canonical per-level data with stable names, metadata, and ordering."""
     level_dir = GENERATED / level.lower()
@@ -550,17 +466,23 @@ def write_data_archive(path: Path, level: str) -> None:
     temporary.replace(path)
 
 
-def package_release(levels: Sequence[str]) -> list[Path]:
+def package_release(levels: Sequence[str], formats: Sequence[str] = ()) -> list[Path]:
     RELEASE.mkdir(parents=True, exist_ok=True)
+    for existing in RELEASE.iterdir():
+        if existing.is_file():
+            existing.unlink()
     artifacts: list[Path] = []
     for level in levels:
-        verify(level)
-        stem = f"jlpt_{level.lower()}"
-        for suffix in ("vocabulary.mochi", "kanji.mochi", "complete.mochi"):
-            source = DIST / f"{stem}_{suffix}"
+        report = verify(level, formats)
+        selected = set(formats)
+        for output in report["outputs"]:
+            if selected and output["format"] not in selected:
+                continue
+            source = DIST / output["file"]
             destination = RELEASE / source.name
             shutil.copyfile(source, destination)
             artifacts.append(destination)
+        stem = f"jlpt_{level.lower()}"
         data_archive = RELEASE / f"{stem}_data.zip"
         write_data_archive(data_archive, level)
         artifacts.append(data_archive)
@@ -580,13 +502,12 @@ def write_csv(path: Path, rows: Sequence[dict[str, Any]], fields: Sequence[str])
             writer.writerow({key: row[key] if isinstance(row[key], (str, int, float)) or row[key] is None else json.dumps(row[key], ensure_ascii=False) for key in fields})
 
 
-def decode_transit_map(value: object) -> dict[str, object]:
-    if not isinstance(value, list) or not value or value[0] != "^ " or len(value) % 2 != 1:
-        raise AssertionError("invalid Transit map")
-    return {value[i][2:]: value[i + 1] for i in range(1, len(value), 2)}
-
-
-def validate(level: str, vocab: Sequence[dict[str, Any]], kanji: Sequence[dict[str, Any]], outputs: Sequence[Path]) -> dict[str, Any]:
+def validate(
+    level: str,
+    vocab: Sequence[dict[str, Any]],
+    kanji: Sequence[dict[str, Any]],
+    artifacts: Sequence[DeckArtifact],
+) -> dict[str, Any]:
     errors: list[str] = []
     lock = load_lock()
     expected_vocab = lock["level_maps"]["vocabulary"]["files"][level]["rows"]
@@ -598,19 +519,10 @@ def validate(level: str, vocab: Sequence[dict[str, Any]], kanji: Sequence[dict[s
     if [r["order"] for r in vocab] != list(range(1, len(vocab) + 1)): errors.append("vocabulary order gap")
     if [r["order"] for r in kanji] != list(range(1, len(kanji) + 1)): errors.append("kanji order gap")
     if any("<furigana>" in e["japanese_raw"] or "{" in e["japanese_raw"] for r in vocab for e in r["examples"]): errors.append("markup leaked into raw examples")
-    for path in outputs:
-        with zipfile.ZipFile(path) as archive:
-            if archive.namelist() != ["data.json"] or archive.testzip() is not None:
-                errors.append(f"invalid Mochi archive: {path.name}")
-                continue
-            root = decode_transit_map(json.loads(archive.read("data.json")))
-            if root.get("version") != 2:
-                errors.append(f"wrong Mochi version: {path.name}")
-            for deck in root.get("decks", []):
-                cards = decode_transit_map(deck)["cards"]
-                positions = [decode_transit_map(card)["pos"] for card in cards]
-                if positions != sorted(positions) or len(positions) != len(set(positions)):
-                    errors.append(f"invalid Mochi positions: {path.name}")
+    if len({artifact.path.name for artifact in artifacts}) != len(artifacts):
+        errors.append("duplicate output filenames")
+    for artifact in artifacts:
+        errors.extend(get_exporter(artifact.format).validate(artifact))
     if errors:
         raise RuntimeError("Validation failed:\n- " + "\n- ".join(errors))
     coverage = sum(bool(r["examples"]) for r in vocab)
@@ -623,27 +535,33 @@ def validate(level: str, vocab: Sequence[dict[str, Any]], kanji: Sequence[dict[s
         "dictionary_match_percent": round(matched * 100 / len(vocab), 1),
         "cards_with_examples": coverage,
         "example_coverage_percent": round(coverage * 100 / len(vocab), 1),
-        "mochi_outputs": [{"file": p.name, "sha256": sha256(p), "bytes": p.stat().st_size} for p in outputs],
+        "outputs": [artifact.to_report(sha256(artifact.path)) for artifact in artifacts],
     }
 
 
-def verify(level: str) -> dict[str, Any]:
+def verify(level: str, formats: Sequence[str] = ()) -> dict[str, Any]:
     level_dir = GENERATED / level.lower()
     vocab = json.loads((level_dir / "vocabulary.json").read_text(encoding="utf-8"))
     kanji = json.loads((level_dir / "kanji.json").read_text(encoding="utf-8"))
-    outputs = (
-        DIST / f"jlpt_{level.lower()}_vocabulary.mochi",
-        DIST / f"jlpt_{level.lower()}_kanji.mochi",
-        DIST / f"jlpt_{level.lower()}_complete.mochi",
-    )
-    report = validate(level, vocab, kanji, outputs)
     recorded = json.loads((level_dir / "report.json").read_text(encoding="utf-8"))
-    if report != recorded:
+    selected = set(formats)
+    outputs = [output for output in recorded["outputs"] if not selected or output["format"] in selected]
+    if selected - {output["format"] for output in outputs}:
+        missing = ", ".join(sorted(selected - {output["format"] for output in outputs}))
+        raise RuntimeError(f"Generated report does not contain requested formats: {missing}")
+    artifacts = [DeckArtifact.from_report(DIST, output) for output in outputs]
+    report = validate(level, vocab, kanji, artifacts)
+    if selected:
+        expected = {key: value for key, value in recorded.items() if key != "outputs"}
+        expected["outputs"] = outputs
+    else:
+        expected = recorded
+    if report != expected:
         raise RuntimeError("Generated artifacts do not match report.json; rebuild the level")
     return report
 
 
-def build(level: str) -> dict[str, Any]:
+def build(level: str, formats: Sequence[str] = ()) -> dict[str, Any]:
     jmdict = read_zip_json(CACHE / "dictionary" / "jmdict_examples.zip")
     kdic_data = read_zip_json(CACHE / "dictionary" / "kanjidic2.zip")
     krad_data = read_zip_json(CACHE / "dictionary" / "kradfile.zip")
@@ -655,15 +573,12 @@ def build(level: str) -> dict[str, Any]:
     (level_dir / "kanji.json").write_text(json_dump(kanji), encoding="utf-8")
     write_csv(level_dir / "vocabulary.csv", vocab, ["id", "level", "order", "source_order", "curriculum", "written", "reading", "meanings", "parts_of_speech", "common", "examples", "provenance"])
     write_csv(level_dir / "kanji.csv", kanji, ["id", "level", "order", "source_order", "character", "meanings", "readings", "strokes", "grade", "frequency_rank", "classical_radical_numbers", "radical_names", "components", "atomic_component", "example_words", "provenance"])
-    vocab_cards = [vocabulary_card(row) for row in vocab]
-    kanji_cards = [kanji_card(row) for row in kanji]
-    vocab_path = DIST / f"jlpt_{level.lower()}_vocabulary.mochi"
-    kanji_path = DIST / f"jlpt_{level.lower()}_kanji.mochi"
-    combined_path = DIST / f"jlpt_{level.lower()}_complete.mochi"
-    write_mochi(vocab_path, ((f"JLPT {level} Vocabulary", vocab_cards),))
-    write_mochi(kanji_path, ((f"JLPT {level} Kanji", kanji_cards),))
-    write_mochi(combined_path, ((f"JLPT {level} Vocabulary", vocab_cards), (f"JLPT {level} Kanji", kanji_cards)))
-    report = validate(level, vocab, kanji, (vocab_path, kanji_path, combined_path))
+    artifacts = [
+        artifact
+        for exporter in select_exporters(formats)
+        for artifact in exporter.export(level, vocab, kanji, DIST)
+    ]
+    report = validate(level, vocab, kanji, artifacts)
     (level_dir / "report.json").write_text(json_dump(report), encoding="utf-8")
     return report
 
@@ -674,21 +589,24 @@ def parse_args() -> argparse.Namespace:
     for command in ("fetch", "build", "all", "verify", "package"):
         item = sub.add_parser(command)
         item.add_argument("--level", action="append", choices=LEVELS, default=[])
+        if command != "fetch":
+            item.add_argument("--format", action="append", choices=available_formats(), default=[])
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
     levels = tuple(args.level or ["N5"])
+    formats = tuple(getattr(args, "format", ()))
     if args.command in {"fetch", "all"}:
         fetch(levels)
     if args.command in {"build", "all"}:
-        reports = [build(level) for level in levels]
+        reports = [build(level, formats) for level in levels]
         print(json_dump(reports), end="")
     if args.command == "verify":
-        print(json_dump([verify(level) for level in levels]), end="")
+        print(json_dump([verify(level, formats) for level in levels]), end="")
     if args.command == "package":
-        paths = package_release(levels)
+        paths = package_release(levels, formats)
         print(json_dump([{"file": path.name, "sha256": sha256(path), "bytes": path.stat().st_size} for path in paths]), end="")
     return 0
 

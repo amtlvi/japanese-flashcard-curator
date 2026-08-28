@@ -1,22 +1,22 @@
 ## Which file should I download?
 
-Most learners need **exactly one** file from the Assets section:
+Most learners need **exactly one complete file** for their level:
 
-| Your level | Download this file |
-| --- | --- |
-| JLPT N5 | `jlpt_n5_complete.mochi` |
-| JLPT N4 | `jlpt_n4_complete.mochi` |
-| JLPT N3 | `jlpt_n3_complete.mochi` |
-| JLPT N2 | `jlpt_n2_complete.mochi` |
-| JLPT N1 | `jlpt_n1_complete.mochi` |
+| Level | Anki | Mochi |
+| --- | --- | --- |
+| JLPT N5 | `jlpt_n5_complete.apkg` | `jlpt_n5_complete.mochi` |
+| JLPT N4 | `jlpt_n4_complete.apkg` | `jlpt_n4_complete.mochi` |
+| JLPT N3 | `jlpt_n3_complete.apkg` | `jlpt_n3_complete.mochi` |
+| JLPT N2 | `jlpt_n2_complete.apkg` | `jlpt_n2_complete.mochi` |
+| JLPT N1 | `jlpt_n1_complete.apkg` | `jlpt_n1_complete.mochi` |
 
-Import that file into Mochi. Each complete file contains separate vocabulary and kanji decks for its level.
+Choose `.apkg` for Anki or `.mochi` for Mochi. Each complete file contains separate vocabulary and kanji decks.
 
 <details>
 <summary>Other assets</summary>
 
-- `jlpt_<level>_vocabulary.mochi`: vocabulary only.
-- `jlpt_<level>_kanji.mochi`: kanji only.
+- `jlpt_<level>_vocabulary.apkg` / `.mochi`: vocabulary only.
+- `jlpt_<level>_kanji.apkg` / `.mochi`: kanji only.
 - `jlpt_<level>_data.zip`: canonical JSON/CSV records and validation report for developers or reuse.
 - `SHA256SUMS`: integrity checksums for every downloadable artifact.
 

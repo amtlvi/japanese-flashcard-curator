@@ -14,7 +14,7 @@ JSON is canonical; CSV mirrors the same nested values as JSON strings. Field nam
 | `written.primary` | string | Preferred source spelling |
 | `written.variants` | string[] | All source spellings |
 | `written.without_furigana` | string | Plain display/copy spelling |
-| `written.with_furigana` | string | Mochi explicit ruby markup or automatic-furigana fallback |
+| `written.with_furigana` | string | Canonical ruby markup; rendered appropriately by each exporter |
 | `written.lookup_text` | string | Plain dictionary lookup form without affix marker |
 | `reading.primary` | string | Cleaned preferred reading |
 | `reading.variants` | string[] | Cleaned alternate readings |
@@ -55,6 +55,8 @@ JSON is canonical; CSV mirrors the same nested values as JSON strings. Field nam
 | `example_words` | object[] | Up to five level vocabulary items containing the character, with raw/furigana forms, reading, and meanings |
 | `provenance` | object | Level-map, dictionary, and component sources |
 
-## Mochi rendering
+## Rendering
 
 The `.mochi` file is a ZIP with compact Transit JSON in `data.json`. Each card contains only documented import essentials: Markdown `content` and a zero-padded `pos`. Vocabulary fronts are plain headwords. Backs carry annotated form, reading, translations, POS, examples, and a fenced raw Japanese block. Kanji backs carry readings, meanings, stats, graphical components, example words, and a raw block.
+
+The `.apkg` file contains separate semantic Anki fields and note types for vocabulary and kanji. Headwords and example words use HTML ruby; examples retain separate Japanese and English content plus a raw copy field. See [`EXPORTERS.md`](EXPORTERS.md) for the format contract and Anki-specific limitations.

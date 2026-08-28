@@ -1,7 +1,7 @@
 [project]
 name = "japanese-flashcard-curator"
-version = "0.1.0"
-description = "Reproducible JLPT flashcard curation and Mochi export"
+version = "0.2.0"
+description = "Reproducible JLPT flashcard curation with Anki and Mochi exports"
 requires-python = ">=3.11"
 
 [project.scripts]

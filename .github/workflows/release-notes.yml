@@ -1,0 +1,24 @@
+name: Update release notes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - RELEASE_NOTES.md
+      - .github/workflows/release-notes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-latest-release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update latest release description
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$(gh release view --json tagName --jq .tagName)"
+          gh release edit "$tag" --notes-file RELEASE_NOTES.md
