@@ -3,60 +3,45 @@ name: Build release
 on:
   push:
     branches: [main]
-    paths: [RELEASE_VERSION]
+    paths: [pyproject.toml]
   workflow_dispatch:
-    inputs:
-      tag:
-        description: Release tag
-        required: true
-        default: v0.2.0
 
 permissions:
   contents: write
 
 jobs:
-  build-release:
+  release:
     runs-on: ubuntu-latest
+    env:
+      UV_LOCKED: "1"
     steps:
       - uses: actions/checkout@v4
-      - name: Select release tag
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            tag="${{ inputs.tag }}"
-          else
-            tag="$(tr -d '[:space:]' < RELEASE_VERSION)"
-          fi
-          echo "RELEASE_TAG=$tag" >> "$GITHUB_ENV"
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           python-version: "3.12"
-      - name: Test
-        run: python3 -m unittest discover -s tests -v
-      - name: Build every JLPT level and format
-        run: >-
-          python3 flashcard_curator.py all
-          --level N5 --level N4 --level N3 --level N2 --level N1
-      - name: Verify every JLPT level and format
-        run: >-
-          python3 flashcard_curator.py verify
-          --level N5 --level N4 --level N3 --level N2 --level N1
-      - name: Package release assets
-        run: >-
-          python3 flashcard_curator.py package
-          --level N5 --level N4 --level N3 --level N2 --level N1
-      - name: Publish release
+          enable-cache: true
+      - run: uv sync
+      - name: Select version
+        run: echo "RELEASE_TAG=v$(uv version --short)" >> "$GITHUB_ENV"
+      - run: uv run python -m unittest discover -s tests -v
+      - name: Build, verify and package every level
+        run: |
+          levels="--level N5 --level N4 --level N3 --level N2 --level N1"
+          uv run flashcard-curator all $levels
+          uv run flashcard-curator verify $levels
+          uv run flashcard-curator package $levels
+      - name: Publish
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
-            gh release edit "$RELEASE_TAG" \
-              --target "$GITHUB_SHA" \
+            gh release edit "$RELEASE_TAG" --target "$GITHUB_SHA" \
               --title "Japanese JLPT flashcards for Anki and Mochi $RELEASE_TAG" \
-              --notes-file RELEASE_NOTES.md
+              --notes-file README.md
             gh release upload "$RELEASE_TAG" release-artifacts/* --clobber
           else
             gh release create "$RELEASE_TAG" release-artifacts/* \
               --target "$GITHUB_SHA" \
               --title "Japanese JLPT flashcards for Anki and Mochi $RELEASE_TAG" \
-              --notes-file RELEASE_NOTES.md
+              --notes-file README.md
           fi

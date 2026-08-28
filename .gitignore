@@ -1,7 +1,7 @@
 .cache/
+.venv/
 __pycache__/
 *.pyc
-data/generated/
+/data/
 dist/
-SHA256SUMS
 release-artifacts/

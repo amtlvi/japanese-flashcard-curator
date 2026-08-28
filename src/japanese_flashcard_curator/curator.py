@@ -3,37 +3,32 @@
 
 from __future__ import annotations
 
-import argparse
 import csv
 import hashlib
 import io
 import json
 import re
 import shutil
-import sys
 import urllib.request
 import zipfile
 from collections import defaultdict
+from importlib import resources
 from pathlib import Path
 from typing import Any, Sequence
 
-from japanese_flashcard_curator.exporters import (
+from .exporters import (
     DeckArtifact,
-    available_formats,
-    decode_transit_map,
     get_exporter,
     select_exporters,
-    write_mochi,
 )
 
 
-ROOT = Path(__file__).resolve().parent
-CACHE = ROOT / ".cache"
-GENERATED = ROOT / "data" / "generated"
-DIST = ROOT / "dist"
-RELEASE = ROOT / "release-artifacts"
-LOCK_PATH = ROOT / "sources.lock.json"
-OVERRIDES_PATH = ROOT / "curation" / "overrides.json"
+WORKSPACE = Path.cwd()
+CACHE = WORKSPACE / ".cache"
+GENERATED = WORKSPACE / "data" / "generated"
+DIST = WORKSPACE / "dist"
+RELEASE = WORKSPACE / "release-artifacts"
+PACKAGE_DATA = resources.files("japanese_flashcard_curator") / "data"
 LEVELS = ("N5", "N4", "N3", "N2", "N1")
 KANJI_RE = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff々〆ヶ]")
 VARIANT_SPLIT_RE = re.compile(r"\s*[;；]\s*")
@@ -58,13 +53,11 @@ def sha256(path: Path) -> str:
 
 
 def load_lock() -> dict[str, Any]:
-    return json.loads(LOCK_PATH.read_text(encoding="utf-8"))
+    return json.loads((PACKAGE_DATA / "sources.lock.json").read_text(encoding="utf-8"))
 
 
 def load_overrides() -> dict[str, Any]:
-    if not OVERRIDES_PATH.exists():
-        return {"vocabulary_aliases": {}}
-    return json.loads(OVERRIDES_PATH.read_text(encoding="utf-8"))
+    return json.loads((PACKAGE_DATA / "overrides.json").read_text(encoding="utf-8"))
 
 
 def verified_download(url: str, destination: Path, expected_sha256: str) -> None:
@@ -72,7 +65,7 @@ def verified_download(url: str, destination: Path, expected_sha256: str) -> None
     if destination.exists() and sha256(destination) == expected_sha256:
         return
     temporary = destination.with_suffix(destination.suffix + ".part")
-    request = urllib.request.Request(url, headers={"User-Agent": "flashcard-curator/0.1"})
+    request = urllib.request.Request(url, headers={"User-Agent": "japanese-flashcard-curator"})
     with urllib.request.urlopen(request, timeout=300) as response, temporary.open("wb") as output:
         shutil.copyfileobj(response, output)
     actual = sha256(temporary)
@@ -582,34 +575,3 @@ def build(level: str, formats: Sequence[str] = ()) -> dict[str, Any]:
     (level_dir / "report.json").write_text(json_dump(report), encoding="utf-8")
     return report
 
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description=__doc__)
-    sub = parser.add_subparsers(dest="command", required=True)
-    for command in ("fetch", "build", "all", "verify", "package"):
-        item = sub.add_parser(command)
-        item.add_argument("--level", action="append", choices=LEVELS, default=[])
-        if command != "fetch":
-            item.add_argument("--format", action="append", choices=available_formats(), default=[])
-    return parser.parse_args()
-
-
-def main() -> int:
-    args = parse_args()
-    levels = tuple(args.level or ["N5"])
-    formats = tuple(getattr(args, "format", ()))
-    if args.command in {"fetch", "all"}:
-        fetch(levels)
-    if args.command in {"build", "all"}:
-        reports = [build(level, formats) for level in levels]
-        print(json_dump(reports), end="")
-    if args.command == "verify":
-        print(json_dump([verify(level, formats) for level in levels]), end="")
-    if args.command == "package":
-        paths = package_release(levels, formats)
-        print(json_dump([{"file": path.name, "sha256": sha256(path), "bytes": path.stat().st_size} for path in paths]), end="")
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())

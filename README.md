@@ -1,52 +1,44 @@
 # Japanese Flashcard Curator
 
-Builds deterministic Anki and Mochi decks for JLPT vocabulary and kanji. It combines pinned community JLPT level maps with JMdict, KANJIDIC2, KRADFILE and sense-linked Tatoeba examples.
+Builds deterministic JLPT vocabulary and kanji decks for Anki and Mochi from pinned community level maps, JMdict, KANJIDIC2, KRADFILE and Tatoeba examples.
 
-## Download a deck
+> Purely vibe-coded. Suggestions and improvements are welcome.
 
-Most learners should download **one complete deck** for their level and app:
+## Download
+
+Most learners need one complete file for their level:
 
 | Level | Anki | Mochi |
 | --- | --- | --- |
-| N5 | [`jlpt_n5_complete.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n5_complete.apkg) | [`jlpt_n5_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n5_complete.mochi) |
-| N4 | [`jlpt_n4_complete.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n4_complete.apkg) | [`jlpt_n4_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n4_complete.mochi) |
-| N3 | [`jlpt_n3_complete.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n3_complete.apkg) | [`jlpt_n3_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n3_complete.mochi) |
-| N2 | [`jlpt_n2_complete.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n2_complete.apkg) | [`jlpt_n2_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n2_complete.mochi) |
-| N1 | [`jlpt_n1_complete.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n1_complete.apkg) | [`jlpt_n1_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n1_complete.mochi) |
+| N5 | [`.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n5_complete.apkg) | [`.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n5_complete.mochi) |
+| N4 | [`.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n4_complete.apkg) | [`.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n4_complete.mochi) |
+| N3 | [`.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n3_complete.apkg) | [`.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n3_complete.mochi) |
+| N2 | [`.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n2_complete.apkg) | [`.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n2_complete.mochi) |
+| N1 | [`.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n1_complete.apkg) | [`.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n1_complete.mochi) |
 
-Vocabulary-only, kanji-only, canonical JSON/CSV and checksums are on the [latest release page](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest).
+Vocabulary-only, kanji-only, canonical data and checksums are on the [release page](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest). Cards include readings, meanings, furigana, sourced examples, raw copyable Japanese and kanji components.
 
-## Card content
+## Develop
 
-- Vocabulary: written form, furigana, reading, English meanings, part of speech, sourced examples and raw copyable Japanese.
-- Kanji: meanings, readings, strokes, frequency, visible KRADFILE components and example words.
-- Ordering: Genki lesson tags where available, then JMdict common-word status; kanji use KANJIDIC2 frequency.
-
-Anki exports use editable semantic fields and stable note IDs. Mochi exports use Markdown and automatic sentence furigana. Tatoeba sentence examples in Anki remain plain Japanese because the source does not provide reliable full-sentence readings.
-
-## How it works
-
-1. Fetch files pinned by immutable revision and SHA-256 in [`sources.lock.json`](sources.lock.json).
-2. Join level maps with dictionary, example and component data.
-3. Apply reviewed exceptions from [`curation/overrides.json`](curation/overrides.json).
-4. Pass canonical records to registered format exporters.
-5. Validate counts, ordering and each package’s internal structure.
-
-Identical inputs produce byte-identical outputs. The JLPT does not publish an exact current vocabulary or kanji syllabus, so these are community mappings rather than official lists. See [`SOURCES.md`](SOURCES.md), [`docs/SCHEMA.md`](docs/SCHEMA.md) and [`docs/EXPORTERS.md`](docs/EXPORTERS.md).
-
-## Build locally
-
-Python 3.11+; no third-party runtime packages are required.
+Install [uv](https://docs.astral.sh/uv/), then:
 
 ```bash
-python3 flashcard_curator.py all --level N5
-python3 flashcard_curator.py verify --level N5
-python3 flashcard_curator.py package --level N5
-python3 -m unittest discover -s tests -v
+uv sync --locked
+uv run flashcard-curator all --level N5
+uv run flashcard-curator verify --level N5
+uv run python -m unittest discover -s tests -v
 ```
 
-All registered formats are built by default. Use `--format anki` or `--format mochi` to select one; repeat `--level` or `--format` as needed. Generated files are ignored and distributed through GitHub Releases.
+All exporters run by default; add `--format anki` or `--format mochi` to select one. Outputs go to ignored `data/`, `dist/` and `release-artifacts/` directories.
 
-> Disclaimer: This is a purely vibe-coded project, but suggestions for improvements and additions are very welcome.
+```text
+src/japanese_flashcard_curator/
+├── curator.py       source fetching and canonical record construction
+├── cli.py           command-line interface
+├── exporters/       Anki/Mochi adapters and validators
+└── data/            pinned checksums and reviewed curation overrides
+```
 
-Code is MIT licensed. Generated data retains upstream licensing and attribution; see [`NOTICE.md`](NOTICE.md).
+The JLPT does not publish a definitive post-2010 item list; these decks use pinned community mappings. Vocabulary comes from [open-anki-jlpt-decks](https://github.com/jamsinclair/open-anki-jlpt-decks), kanji levels from [JLPT_Vocabulary](https://github.com/Bluskyo/JLPT_Vocabulary), dictionary/components from [EDRDG](https://www.edrdg.org/edrdg/licence.html), and examples from [Tatoeba](https://tatoeba.org/en/terms_of_use). Exact revisions, row counts and SHA-256 values live in `src/japanese_flashcard_curator/data/sources.lock.json`.
+
+Code is MIT. Generated data retains upstream attribution and licensing: level-list normalization is MIT/CC BY-derived, JMdict/KANJIDIC2/KRADFILE is CC BY-SA 4.0, and Tatoeba examples are CC BY 2.0 FR.

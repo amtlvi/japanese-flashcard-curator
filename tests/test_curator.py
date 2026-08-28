@@ -4,9 +4,10 @@ import unittest
 import zipfile
 from pathlib import Path
 
-import flashcard_curator as curator
+from japanese_flashcard_curator import curator
 from japanese_flashcard_curator.exporters import available_formats
 from japanese_flashcard_curator.exporters.anki import AnkiExporter, mochi_furigana_to_html
+from japanese_flashcard_curator.exporters.mochi import decode_transit_map, write_mochi
 
 
 class FuriganaTests(unittest.TestCase):
@@ -89,11 +90,11 @@ class FormatTests(unittest.TestCase):
     def test_mochi_positions(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "test.mochi"
-            curator.write_mochi(path, (("Test", ["a\n\n---\n\nb", "c\n\n---\n\nd"]),))
+            write_mochi(path, (("Test", ["a\n\n---\n\nb", "c\n\n---\n\nd"]),))
             with zipfile.ZipFile(path) as archive:
-                root = curator.decode_transit_map(json.loads(archive.read("data.json")))
-            cards = curator.decode_transit_map(root["decks"][0])["cards"]
-            self.assertEqual([curator.decode_transit_map(c)["pos"] for c in cards], ["000001", "000002"])
+                root = decode_transit_map(json.loads(archive.read("data.json")))
+            cards = decode_transit_map(root["decks"][0])["cards"]
+            self.assertEqual([decode_transit_map(c)["pos"] for c in cards], ["000001", "000002"])
 
     def test_exporter_registry(self):
         self.assertEqual(available_formats(), ("anki", "mochi"))

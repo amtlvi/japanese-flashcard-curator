@@ -1,17 +1,19 @@
 name: CI
 
-on:
-  push:
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   verify:
     runs-on: ubuntu-latest
+    env:
+      UV_LOCKED: "1"
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           python-version: "3.12"
-      - run: python3 -m unittest discover -s tests -v
-      - run: python3 flashcard_curator.py all --level N5
-      - run: python3 flashcard_curator.py verify --level N5
+          enable-cache: true
+      - run: uv sync
+      - run: uv run python -m unittest discover -s tests -v
+      - run: uv run flashcard-curator all --level N5
+      - run: uv run flashcard-curator verify --level N5
