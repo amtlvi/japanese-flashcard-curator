@@ -1,44 +1,40 @@
-# Flashcard Curator
+# Japanese Flashcard Curator
 
-Reproducible JLPT vocabulary and kanji curation with deterministic Mochi exports.
+Builds deterministic [Mochi](https://mochi.cards/) decks for JLPT vocabulary and kanji. It combines pinned community JLPT level maps with JMdict, KANJIDIC2, KRADFILE, and sense-linked Tatoeba examples.
 
-## Important scope note
+## Download a deck
 
-The JLPT publishes skill-level summaries, not an official post-2010 itemized vocabulary or kanji syllabus. This project therefore does **not** label any community list as “the exact official list.” It uses pinned, reviewable community level maps and enriches them from maintained dictionary projects. Every upstream file is locked by commit or release tag and SHA-256 in [`sources.lock.json`](sources.lock.json).
+Most learners should download **one complete deck** for their level:
 
-Generated files are release assets, not tracked repository content. The latest release contains:
+| Level | Download |
+| --- | --- |
+| N5 | [`jlpt_n5_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n5_complete.mochi) |
+| N4 | [`jlpt_n4_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n4_complete.mochi) |
+| N3 | [`jlpt_n3_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n3_complete.mochi) |
+| N2 | [`jlpt_n2_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n2_complete.mochi) |
+| N1 | [`jlpt_n1_complete.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n1_complete.mochi) |
 
-| Artifact | Count | Purpose |
-| --- | ---: | --- |
-| `jlpt_n5_complete.mochi` | 718 vocabulary + 79 kanji | Recommended N5 import |
-| `jlpt_<level>_vocabulary.mochi` | Per-level vocabulary | Vocabulary only |
-| `jlpt_<level>_kanji.mochi` | Per-level kanji | Kanji only |
-| `jlpt_<level>_data.zip` | Canonical JSON/CSV and build report | Machine-readable data |
-| `SHA256SUMS` | Checksums for every release asset | Integrity verification |
+Vocabulary-only, kanji-only, canonical JSON/CSV, and checksums are available on the [latest release page](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest).
 
-The build matched all 718 vocabulary rows to JMdict. Of those, 697 have one or two JMdict sense-linked Tatoeba examples. Missing examples remain explicitly missing rather than being fabricated.
+## What is on each card?
 
-## Learnable ordering
+- Vocabulary: written form, furigana, reading, English meanings, part of speech, sourced examples and a raw Japanese copy block.
+- Kanji: meanings, readings, strokes, frequency, visible KRADFILE components and example words.
+- Ordering: Genki lesson tags where available, then JMdict common-word status; kanji use KANJIDIC2 frequency.
 
-Vocabulary cards are ordered by:
+## How it works
 
-1. Genki lesson number when the pinned level map provides one;
-2. JMdict’s common-word flag for the remainder;
-3. original source order as a deterministic tie-breaker.
+1. Download files pinned by commit/release and SHA-256 in [`sources.lock.json`](sources.lock.json).
+2. Join the level maps with dictionary, example and component data.
+3. Apply reviewed exceptions from [`curation/overrides.json`](curation/overrides.json).
+4. Validate counts, IDs, ordering, raw text and Mochi structure.
+5. Produce byte-identical Mochi and data archives for identical inputs.
 
-The first words are `医者`, `今`, `妹`, `英語`, `ええ`, `お母さん`, `お父さん`, `弟`, `お兄さん`, and `お姉さん`—all tagged as Genki Lesson 1. Kanji are ordered by KANJIDIC2 newspaper frequency rank, with source order as fallback.
+The JLPT does not publish an exact current vocabulary or kanji syllabus. These are pinned community level mappings, not official lists. Full provenance is in [`SOURCES.md`](SOURCES.md); the record format is in [`docs/SCHEMA.md`](docs/SCHEMA.md).
 
-## Card design
+## Build locally
 
-Vocabulary cards show the plain written form on the front. The back includes explicit Mochi furigana, reading, English meanings, part of speech, up to two short sense-linked examples with automatic sentence furigana, and the same Japanese examples as raw text in a fenced `text` block for clean copying into Yomiwa or another dictionary.
-
-Kanji cards include English meanings, on/kun readings, stroke count, grade, frequency rank, classical radical number, KRADFILE visible components, component glosses when available, example words, and a raw copy block. KRADFILE components are graphical components, not claims about character etymology.
-
-See [`docs/SCHEMA.md`](docs/SCHEMA.md) for every canonical field and [`SOURCES.md`](SOURCES.md) for provenance and licensing.
-
-## Rebuild
-
-Python 3.11 or newer is the only runtime requirement.
+Python 3.11+; no third-party runtime packages are required.
 
 ```bash
 python3 flashcard_curator.py all --level N5
@@ -47,24 +43,8 @@ python3 flashcard_curator.py package --level N5
 python3 -m unittest discover -s tests -v
 ```
 
-To build more lists, repeat `--level`:
+Repeat `--level` to build multiple levels. Generated files are ignored and distributed through GitHub Releases.
 
-```bash
-python3 flashcard_curator.py all --level N5 --level N4 --level N3
-```
+> Disclaimer: This is a purely vibe-coded project, but suggestions for improvements and additions are very welcome.
 
-The source lock already contains N1–N5 mappings. Intentional spelling aliases belong in [`curation/overrides.json`](curation/overrides.json), keeping curation separate from transformation code.
-
-## Determinism and validation
-
-Downloads are rejected when their SHA-256 differs from the lock. The builder checks exact source counts, unique IDs, contiguous ordering, raw-example cleanliness, Mochi ZIP/Transit shape, and card positions. Mochi archives use a fixed ZIP timestamp and compact Transit JSON, so identical inputs produce byte-identical packages.
-
-The archives are structurally validated here, but application-level import still depends on Mochi itself.
-
-## Releases
-
-The release workflow rebuilds N1–N5 from pinned inputs, validates every level, packages the canonical data deterministically, and publishes the resulting files as GitHub release assets. `dist/`, `data/generated/`, and `release-artifacts/` are intentionally ignored; a clean clone contains only the curator source, configuration, tests, and documentation.
-
-## License
-
-The curator code is MIT licensed. Generated data contains material under upstream licenses, including CC BY and CC BY-SA; see [`NOTICE.md`](NOTICE.md) before redistributing.
+Code is MIT licensed. Generated data retains upstream licensing and attribution; see [`NOTICE.md`](NOTICE.md).

@@ -3,6 +3,10 @@ name: Build release
 on:
   push:
     branches: [main]
+    paths:
+      - README.md
+      - RELEASE_NOTES.md
+      - .github/workflows/release.yml
   workflow_dispatch:
     inputs:
       tag:
@@ -14,10 +18,23 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  update-latest-release-notes:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update latest release description
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$(gh release view --json tagName --jq .tagName)"
+          gh release edit "$tag" --notes-file RELEASE_NOTES.md
+
+  build-release:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     env:
-      RELEASE_TAG: ${{ inputs.tag || 'v0.1.0' }}
+      RELEASE_TAG: ${{ inputs.tag }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -33,19 +50,23 @@ jobs:
         run: >-
           python3 flashcard_curator.py verify
           --level N5 --level N4 --level N3 --level N2 --level N1
-      - name: Package canonical data
+      - name: Package release assets
         run: >-
           python3 flashcard_curator.py package
           --level N5 --level N4 --level N3 --level N2 --level N1
-      - name: Create release once
+      - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
-            echo "Release $RELEASE_TAG already exists; leaving it unchanged."
+            gh release edit "$RELEASE_TAG" \
+              --target "$GITHUB_SHA" \
+              --title "Japanese JLPT flashcards for Mochi $RELEASE_TAG" \
+              --notes-file RELEASE_NOTES.md
+            gh release upload "$RELEASE_TAG" release-artifacts/* --clobber
           else
             gh release create "$RELEASE_TAG" release-artifacts/* \
               --target "$GITHUB_SHA" \
-              --title "JLPT N1–N5 Mochi decks $RELEASE_TAG" \
-              --notes "Deterministic Mochi decks and canonical JSON/CSV data for JLPT N1–N5. See SOURCES.md for provenance and limitations."
+              --title "Japanese JLPT flashcards for Mochi $RELEASE_TAG" \
+              --notes-file RELEASE_NOTES.md
           fi
