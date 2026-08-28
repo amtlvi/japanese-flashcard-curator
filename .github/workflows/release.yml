@@ -28,7 +28,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           tag="$(gh release view --json tagName --jq .tagName)"
-          gh release edit "$tag" --notes-file RELEASE_NOTES.md
+          gh release edit "$tag" \
+            --title "Japanese JLPT flashcards for Mochi $tag" \
+            --notes-file RELEASE_NOTES.md
 
   build-release:
     if: github.event_name == 'workflow_dispatch'
