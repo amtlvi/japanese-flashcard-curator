@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 
 from .curator import LEVELS, build, fetch, json_dump, package_release, sha256, verify
 from .exporters import available_formats
+from .exporters.mochi import prepare_mochi_update
 
 
 def parse_args() -> argparse.Namespace:
@@ -18,11 +20,20 @@ def parse_args() -> argparse.Namespace:
         item.add_argument("--level", action="append", choices=LEVELS, default=[])
         if command != "fetch":
             item.add_argument("--format", action="append", choices=available_formats(), default=[])
+    upgrade = subcommands.add_parser(
+        "mochi-upgrade", description="Build an in-place Mochi update without replacing review history."
+    )
+    upgrade.add_argument("existing", type=Path, help="native .mochi export of the imported deck")
+    upgrade.add_argument("release", type=Path, help="new .mochi release file")
+    upgrade.add_argument("--output", type=Path, default=Path("mochi-update.mochi"))
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+    if args.command == "mochi-upgrade":
+        print(json_dump(prepare_mochi_update(args.existing, args.release, args.output)), end="")
+        return 0
     levels = tuple(args.level or ["N5"])
     formats = tuple(getattr(args, "format", ()))
     if args.command in {"fetch", "all"}:

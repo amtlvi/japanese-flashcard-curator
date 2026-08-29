@@ -18,6 +18,16 @@ Most learners need one complete file for their level:
 
 Vocabulary-only, kanji-only, canonical data and checksums are on the [release page](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest). Cards include readings, meanings, furigana, sourced examples, raw copyable Japanese and kanji components.
 
+### Upgrade an imported Mochi deck
+
+First export your current deck from Mochi as a native `.mochi` backup. Download the new matching release file, then create and import an update package:
+
+```bash
+uv run flashcard-curator mochi-upgrade current-export.mochi jlpt_n5_complete.mochi --output update.mochi
+```
+
+The update reuses the IDs assigned to your existing cards and changes only their content/order, so Mochi keeps their review history. It adds newly introduced cards and leaves removed cards untouched. Do not delete the existing deck; keep the native export as a backup.
+
 ## Develop
 
 Install [uv](https://docs.astral.sh/uv/), then:

@@ -7,7 +7,16 @@ from pathlib import Path
 from japanese_flashcard_curator import curator
 from japanese_flashcard_curator.exporters import available_formats
 from japanese_flashcard_curator.exporters.anki import AnkiExporter, mochi_furigana_to_html
-from japanese_flashcard_curator.exporters.mochi import decode_transit_map, write_mochi
+from japanese_flashcard_curator.exporters.mochi import (
+    MochiExporter,
+    _write_transit_archive,
+    kanji_card,
+    prepare_mochi_update,
+    read_mochi,
+    transit_keyword,
+    transit_map,
+    write_mochi,
+)
 
 
 class FuriganaTests(unittest.TestCase):
@@ -47,6 +56,7 @@ class FormatTests(unittest.TestCase):
             "examples": [
                 {
                     "japanese_raw": "寿司を食べる。",
+                    "japanese_furigana": "寿司を{食}(た)べる。",
                     "english": "I eat sushi.",
                 }
             ],
@@ -91,10 +101,61 @@ class FormatTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "test.mochi"
             write_mochi(path, (("Test", ["a\n\n---\n\nb", "c\n\n---\n\nd"]),))
-            with zipfile.ZipFile(path) as archive:
-                root = decode_transit_map(json.loads(archive.read("data.json")))
-            cards = decode_transit_map(root["decks"][0])["cards"]
-            self.assertEqual([decode_transit_map(c)["pos"] for c in cards], ["000001", "000002"])
+            root = read_mochi(path)
+            self.assertEqual([card["pos"] for card in root["cards"]], ["000001", "000002"])
+
+    def test_mochi_frequency_is_not_a_tag(self):
+        content = kanji_card(self.sample_kanji())
+        self.assertIn("Frequency rank: 328", content)
+        self.assertNotIn("#328", content)
+
+    def test_mochi_source_hash_is_escaped(self):
+        record = self.sample_vocabulary()
+        record["meanings"] = ["#1"]
+        from japanese_flashcard_curator.exporters.mochi import vocabulary_card
+
+        self.assertIn("- \\#1", vocabulary_card(record))
+
+    def test_mochi_packages_are_valid_and_deterministic(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            exporter = MochiExporter()
+            artifacts = exporter.export("N5", [self.sample_vocabulary()], [self.sample_kanji()], root)
+            first = {artifact.path.name: artifact.path.read_bytes() for artifact in artifacts}
+            self.assertTrue(all(exporter.validate(artifact) == [] for artifact in artifacts))
+            artifacts = exporter.export("N5", [self.sample_vocabulary()], [self.sample_kanji()], root)
+            self.assertEqual(first, {artifact.path.name: artifact.path.read_bytes() for artifact in artifacts})
+
+    def test_mochi_upgrade_reuses_imported_ids(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            existing = root / "existing.mochi"
+            release = root / "release.mochi"
+            update = root / "update.mochi"
+            old_content = "# 食\n\n---\n\nOld back"
+            old_card = transit_map((
+                ("id", transit_keyword("ExistingCard01")),
+                ("content", old_content),
+                ("pos", "000001"),
+            ))
+            old_deck = transit_map((
+                ("id", transit_keyword("ExistingDeck01")),
+                ("name", "JLPT N5 Kanji"),
+                ("cards", [old_card]),
+            ))
+            _write_transit_archive(
+                existing, transit_map((("version", 2), ("decks", [old_deck])))
+            )
+            write_mochi(
+                release,
+                (("JLPT N5 Kanji", (("n5-kanji-0001", "# 食\n\n---\n\nNew back"),)),),
+            )
+            report = prepare_mochi_update(existing, release, update)
+            cards = read_mochi(update)["cards"]
+            self.assertEqual(report, {"updated": 1, "added": 0, "retained": 0})
+            self.assertEqual(cards[0]["id"], "ExistingCard01")
+            self.assertEqual(cards[0]["deck-id"], "ExistingDeck01")
+            self.assertNotIn("reviews", cards[0])
 
     def test_exporter_registry(self):
         self.assertEqual(available_formats(), ("anki", "mochi"))
