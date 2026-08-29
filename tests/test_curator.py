@@ -6,7 +6,7 @@ from pathlib import Path
 
 from japanese_flashcard_curator import curator
 from japanese_flashcard_curator.exporters import available_formats
-from japanese_flashcard_curator.exporters.anki import AnkiExporter, mochi_furigana_to_html
+from japanese_flashcard_curator.exporters.anki import AnkiExporter, mochi_furigana_to_html, vocabulary_fields
 from japanese_flashcard_curator.exporters.mochi import (
     MochiExporter,
     _write_transit_archive,
@@ -16,6 +16,7 @@ from japanese_flashcard_curator.exporters.mochi import (
     transit_keyword,
     transit_map,
     write_mochi,
+    vocabulary_card,
 )
 
 
@@ -51,6 +52,7 @@ class FormatTests(unittest.TestCase):
             },
             "reading": {"primary": "たべる"},
             "meanings": ["to eat"],
+            "kanji_details": [{"character": "食", "meanings": ["eat", "food"]}],
             "parts_of_speech": [{"label": "Ichidan verb"}],
             "common": True,
             "examples": [
@@ -96,6 +98,23 @@ class FormatTests(unittest.TestCase):
         ]}]
         self.assertEqual(curator.sense_examples(senses, limit=1)[0]["japanese_raw"], "短い。")
 
+    def test_vocabulary_kanji_details_are_ordered_and_unique(self):
+        kdic = {
+            "時": {"readingMeaning": {"groups": [{"meanings": [{"lang": "en", "value": "time"}]}]}},
+            "計": {"readingMeaning": {"groups": [{"meanings": [
+                {"lang": "en", "value": "plot"},
+                {"lang": "en", "value": "plan"},
+                {"lang": "en", "value": "measure"},
+            ]}]}},
+        }
+        self.assertEqual(
+            curator.vocabulary_kanji_details("時計時", kdic),
+            [
+                {"character": "時", "meanings": ["time"]},
+                {"character": "計", "meanings": ["plot", "plan"]},
+            ],
+        )
+
 
     def test_mochi_positions(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -112,9 +131,15 @@ class FormatTests(unittest.TestCase):
     def test_mochi_source_hash_is_escaped(self):
         record = self.sample_vocabulary()
         record["meanings"] = ["#1"]
-        from japanese_flashcard_curator.exporters.mochi import vocabulary_card
-
         self.assertIn("- \\#1", vocabulary_card(record))
+
+    def test_vocabulary_card_includes_kanji_details(self):
+        self.assertIn("**Kanji in this word**\n\n- 食 — eat; food", vocabulary_card(self.sample_vocabulary()))
+
+    def test_anki_vocabulary_includes_kanji_details(self):
+        meanings = vocabulary_fields(self.sample_vocabulary())[4]
+        self.assertIn("Kanji in this word", meanings)
+        self.assertIn("食 — eat; food", meanings)
 
     def test_mochi_packages_are_valid_and_deterministic(self):
         with tempfile.TemporaryDirectory() as directory:

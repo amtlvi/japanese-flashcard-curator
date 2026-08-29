@@ -16,7 +16,7 @@ Most learners need one complete file for their level:
 | N2 | [`.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n2_complete.apkg) | [`.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n2_complete.mochi) |
 | N1 | [`.apkg`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n1_complete.apkg) | [`.mochi`](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest/download/jlpt_n1_complete.mochi) |
 
-Vocabulary-only, kanji-only, canonical data and checksums are on the [release page](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest). Cards include readings, meanings, furigana, sourced examples, raw copyable Japanese and kanji components.
+Vocabulary-only, kanji-only, canonical data and checksums are on the [release page](https://github.com/amtlvi/japanese-flashcard-curator/releases/latest). Cards include readings, meanings, furigana, sourced examples, raw copyable Japanese, per-word kanji meaning clues and kanji components.
 
 ### Upgrade an imported Mochi deck
 

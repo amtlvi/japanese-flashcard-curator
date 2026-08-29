@@ -284,7 +284,23 @@ def parse_meanings(value: str) -> list[str]:
     return [part.strip() for part in re.split(r"\s*;\s*|,\s+(?=[a-zA-Z(])", value) if part.strip()]
 
 
-def vocabulary_records(level: str, jmdict: dict[str, Any]) -> list[dict[str, Any]]:
+def vocabulary_kanji_details(
+    written: str,
+    kdic: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Return concise KANJIDIC2 meaning clues for kanji visible in a word."""
+    return [
+        {"character": character, "meanings": kanji_meanings(kdic[character])[:2]}
+        for character in dict.fromkeys(written)
+        if character in kdic
+    ]
+
+
+def vocabulary_records(
+    level: str,
+    jmdict: dict[str, Any],
+    kdic: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
     rows = source_rows(level)
     aliases = load_overrides().get("vocabulary_aliases", {})
     example_suppressions = set(load_overrides().get("example_suppressions", []))
@@ -326,6 +342,7 @@ def vocabulary_records(level: str, jmdict: dict[str, Any]) -> list[dict[str, Any
                 "source_text": row["reading"],
             },
             "meanings": parse_meanings(row["meaning"]),
+            "kanji_details": vocabulary_kanji_details(primary_written, kdic),
             "parts_of_speech": [{"code": code, "label": tags.get(code, code)} for code in pos_codes],
             "common": common,
             "examples": [] if primary_written in example_suppressions else sense_examples(senses),
@@ -334,6 +351,7 @@ def vocabulary_records(level: str, jmdict: dict[str, Any]) -> list[dict[str, Any
                 "level_map_guid": row.get("guid", ""),
                 "dictionary": "JMdict",
                 "dictionary_entry_id": entry["id"] if entry else None,
+                "kanji_details": "KANJIDIC2",
                 "dictionary_lookup_aliases": lookup_aliases,
                 "examples": "JMdict sense-linked Tatoeba examples" if entry else None,
             },
@@ -512,6 +530,13 @@ def validate(
     if [r["order"] for r in vocab] != list(range(1, len(vocab) + 1)): errors.append("vocabulary order gap")
     if [r["order"] for r in kanji] != list(range(1, len(kanji) + 1)): errors.append("kanji order gap")
     if any("<furigana>" in e["japanese_raw"] or "{" in e["japanese_raw"] for r in vocab for e in r["examples"]): errors.append("markup leaked into raw examples")
+    if any(
+        len({detail["character"] for detail in record["kanji_details"]}) != len(record["kanji_details"])
+        or any(detail["character"] not in record["written"]["primary"] for detail in record["kanji_details"])
+        or any(len(detail["meanings"]) > 2 for detail in record["kanji_details"])
+        for record in vocab
+    ):
+        errors.append("invalid vocabulary kanji details")
     if len({artifact.path.name for artifact in artifacts}) != len(artifacts):
         errors.append("duplicate output filenames")
     for artifact in artifacts:
@@ -558,13 +583,14 @@ def build(level: str, formats: Sequence[str] = ()) -> dict[str, Any]:
     jmdict = read_zip_json(CACHE / "dictionary" / "jmdict_examples.zip")
     kdic_data = read_zip_json(CACHE / "dictionary" / "kanjidic2.zip")
     krad_data = read_zip_json(CACHE / "dictionary" / "kradfile.zip")
-    vocab = vocabulary_records(level, jmdict)
-    kanji = kanji_records(level, source_kanji(level), kanjidic_index(kdic_data), krad_data["kanji"], vocab)
+    kdic = kanjidic_index(kdic_data)
+    vocab = vocabulary_records(level, jmdict, kdic)
+    kanji = kanji_records(level, source_kanji(level), kdic, krad_data["kanji"], vocab)
     level_dir = GENERATED / level.lower()
     level_dir.mkdir(parents=True, exist_ok=True)
     (level_dir / "vocabulary.json").write_text(json_dump(vocab), encoding="utf-8")
     (level_dir / "kanji.json").write_text(json_dump(kanji), encoding="utf-8")
-    write_csv(level_dir / "vocabulary.csv", vocab, ["id", "level", "order", "source_order", "curriculum", "written", "reading", "meanings", "parts_of_speech", "common", "examples", "provenance"])
+    write_csv(level_dir / "vocabulary.csv", vocab, ["id", "level", "order", "source_order", "curriculum", "written", "reading", "meanings", "kanji_details", "parts_of_speech", "common", "examples", "provenance"])
     write_csv(level_dir / "kanji.csv", kanji, ["id", "level", "order", "source_order", "character", "meanings", "readings", "strokes", "grade", "frequency_rank", "classical_radical_numbers", "radical_names", "components", "atomic_component", "example_words", "provenance"])
     artifacts = [
         artifact
@@ -574,4 +600,3 @@ def build(level: str, formats: Sequence[str] = ()) -> dict[str, Any]:
     report = validate(level, vocab, kanji, artifacts)
     (level_dir / "report.json").write_text(json_dump(report), encoding="utf-8")
     return report
-

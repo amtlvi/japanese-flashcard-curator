@@ -195,6 +195,11 @@ def vocabulary_fields(record: Record) -> list[str]:
     copy_values = clean_copy_values([example["japanese_raw"] for example in record["examples"]])
     if not copy_values:
         copy_values = [record["written"]["lookup_text"]]
+    meanings = html_list(record["meanings"])
+    if record["kanji_details"]:
+        meanings += '<div class="label">Kanji in this word</div>' + html_list(
+            [f"{detail['character']} — {'; '.join(detail['meanings'])}" for detail in record["kanji_details"]]
+        )
     return [
         html.escape(record["id"]),
         html.escape(record["written"]["without_furigana"]),
@@ -204,7 +209,7 @@ def vocabulary_fields(record: Record) -> list[str]:
             record["reading"]["primary"],
         ),
         html.escape(record["reading"]["primary"]),
-        html_list(record["meanings"]),
+        meanings,
         html.escape("; ".join(part["label"] for part in record["parts_of_speech"])),
         examples,
         html.escape("\n".join(copy_values)),

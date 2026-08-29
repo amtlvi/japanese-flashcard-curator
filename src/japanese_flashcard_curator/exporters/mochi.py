@@ -82,6 +82,12 @@ def vocabulary_card(record: Record) -> str:
     ]
     if record["parts_of_speech"]:
         lines += ["", "**Part of speech:** " + "; ".join(p["label"] for p in record["parts_of_speech"])]
+    if record["kanji_details"]:
+        lines += ["", "**Kanji in this word**", ""]
+        lines += [
+            f"- {detail['character']} — {'; '.join(detail['meanings'])}"
+            for detail in record["kanji_details"]
+        ]
     if record["examples"]:
         lines += ["", "**Examples**", ""]
         for example in record["examples"]:
