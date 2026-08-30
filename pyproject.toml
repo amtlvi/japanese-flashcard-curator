@@ -1,6 +1,6 @@
 [project]
 name = "japanese-flashcard-curator"
-version = "0.4.1"
+version = "0.4.2"
 description = "Reproducible JLPT flashcard curation with Anki and Mochi exports"
 readme = "README.md"
 license = "MIT"

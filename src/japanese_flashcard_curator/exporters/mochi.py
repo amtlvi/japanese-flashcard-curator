@@ -219,6 +219,11 @@ class _TransitReader:
                 return self.read(value[1])
             return [self.read(item) for item in value]
         if isinstance(value, dict):
+            if len(value) == 1:
+                tag, tagged_value = next(iter(value.items()))
+                if tag in {"~#list", "~#set"}:
+                    self.read(tag)
+                    return self.read(tagged_value)
             return {str(self.read(key, map_key=True)): self.read(item) for key, item in value.items()}
         return value
 

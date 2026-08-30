@@ -10,6 +10,7 @@ from japanese_flashcard_curator.exporters.anki import AnkiExporter, mochi_furiga
 from japanese_flashcard_curator.exporters.base import DeckArtifact
 from japanese_flashcard_curator.exporters.mochi import (
     MochiExporter,
+    _deck_index,
     _write_transit_archive,
     kanji_card,
     prepare_mochi_update,
@@ -206,6 +207,37 @@ class FormatTests(unittest.TestCase):
             self.assertEqual(cards[0]["id"], "ExistingCard01")
             self.assertEqual(cards[0]["deck-id"], "ExistingDeck01")
             self.assertNotIn("reviews", cards[0])
+
+    def test_mochi_reader_supports_native_tagged_lists(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "native.mochi"
+            native = {
+                "~:version": 2,
+                "~:decks": [
+                    {
+                        "~:id": "~:ExistingDeck01",
+                        "~:name": "Test",
+                        "~:cards": {
+                            "~#list": [
+                                {
+                                    "~:id": "~:ExistingCard01",
+                                    "~:content": "front\n\n---\n\nback",
+                                    "~:reviews": {"~#list": []},
+                                },
+                                {
+                                    "~:id": "~:ExistingCard02",
+                                    "~:content": "second\n\n---\n\nback",
+                                    "~:tags": {"~#set": ["tag"]},
+                                },
+                            ]
+                        },
+                    }
+                ],
+            }
+            _write_transit_archive(path, native)
+            deck = _deck_index(read_mochi(path))["Test"]
+            self.assertEqual([card["id"] for card in deck["cards"]], ["ExistingCard01", "ExistingCard02"])
+            self.assertEqual(deck["cards"][1]["tags"], ["tag"])
 
     def test_exporter_registry(self):
         self.assertEqual(available_formats(), ("anki", "mochi"))
