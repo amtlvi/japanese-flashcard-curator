@@ -153,26 +153,31 @@ def write_mochi(
 ) -> None:
     """Write an initial-import package that also has stable update identities."""
     encoded_decks = []
-    encoded_cards = []
     for deck_name, cards in decks:
         deck_id = stable_id("deck", deck_name)
-        encoded_decks.append(
-            transit_map((("id", transit_keyword(deck_id)), ("name", transit_string(deck_name))))
-        )
         width = max(6, len(str(len(cards))))
+        encoded_cards = []
         for index, card in enumerate(cards, start=1):
             source_id, content = card if isinstance(card, tuple) else (f"{deck_name}:{index}", card)
             encoded_cards.append(
                 transit_map(
                     (
                         ("id", transit_keyword(stable_id("card", source_id))),
-                        ("deck-id", transit_keyword(deck_id)),
                         ("content", transit_string(content)),
                         ("pos", f"{index:0{width}d}"),
                     )
                 )
             )
-    payload = transit_map((("version", 2), ("decks", encoded_decks), ("cards", encoded_cards)))
+        encoded_decks.append(
+            transit_map(
+                (
+                    ("id", transit_keyword(deck_id)),
+                    ("name", transit_string(deck_name)),
+                    ("cards", encoded_cards),
+                )
+            )
+        )
+    payload = transit_map((("version", 2), ("decks", encoded_decks)))
     _write_transit_archive(path, payload)
 
 
@@ -358,6 +363,10 @@ class MochiExporter:
             root = read_mochi(artifact.path)
         except (OSError, zipfile.BadZipFile, json.JSONDecodeError, IndexError, ValueError) as exc:
             return [f"invalid Mochi archive {artifact.path.name}: {exc}"]
+        if root.get("cards"):
+            errors.append(f"top-level cards in initial Mochi import: {artifact.path.name}")
+        if any("cards" not in deck for deck in root.get("decks", [])):
+            errors.append(f"Mochi deck has no nested cards: {artifact.path.name}")
         decks = _deck_index(root)
         if len(decks) != len(artifact.decks):
             errors.append(f"wrong Mochi deck count: {artifact.path.name}")

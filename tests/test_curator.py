@@ -7,6 +7,7 @@ from pathlib import Path
 from japanese_flashcard_curator import curator
 from japanese_flashcard_curator.exporters import available_formats
 from japanese_flashcard_curator.exporters.anki import AnkiExporter, mochi_furigana_to_html, vocabulary_fields
+from japanese_flashcard_curator.exporters.base import DeckArtifact
 from japanese_flashcard_curator.exporters.mochi import (
     MochiExporter,
     _write_transit_archive,
@@ -121,7 +122,10 @@ class FormatTests(unittest.TestCase):
             path = Path(directory) / "test.mochi"
             write_mochi(path, (("Test", ["a\n\n---\n\nb", "c\n\n---\n\nd"]),))
             root = read_mochi(path)
-            self.assertEqual([card["pos"] for card in root["cards"]], ["000001", "000002"])
+            self.assertNotIn("cards", root)
+            cards = root["decks"][0]["cards"]
+            self.assertEqual([card["pos"] for card in cards], ["000001", "000002"])
+            self.assertTrue(all("deck-id" not in card for card in cards))
 
     def test_mochi_frequency_is_not_a_tag(self):
         content = kanji_card(self.sample_kanji())
@@ -150,6 +154,27 @@ class FormatTests(unittest.TestCase):
             self.assertTrue(all(exporter.validate(artifact) == [] for artifact in artifacts))
             artifacts = exporter.export("N5", [self.sample_vocabulary()], [self.sample_kanji()], root)
             self.assertEqual(first, {artifact.path.name: artifact.path.read_bytes() for artifact in artifacts})
+
+    def test_mochi_validator_rejects_update_layout_as_initial_import(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "broken.mochi"
+            deck_id = "ExistingDeck01"
+            deck = transit_map((("id", transit_keyword(deck_id)), ("name", "Test")))
+            card = transit_map(
+                (
+                    ("id", transit_keyword("ExistingCard01")),
+                    ("deck-id", transit_keyword(deck_id)),
+                    ("content", "front\n\n---\n\nback"),
+                    ("pos", "000001"),
+                )
+            )
+            _write_transit_archive(
+                path, transit_map((("version", 2), ("decks", [deck]), ("cards", [card])))
+            )
+            artifact = DeckArtifact("mochi", "test", path, (("Test", 1),))
+            errors = MochiExporter().validate(artifact)
+            self.assertTrue(any("top-level cards" in error for error in errors))
+            self.assertTrue(any("no nested cards" in error for error in errors))
 
     def test_mochi_upgrade_reuses_imported_ids(self):
         with tempfile.TemporaryDirectory() as directory:
