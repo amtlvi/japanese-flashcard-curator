@@ -20,13 +20,17 @@ Vocabulary-only, kanji-only, canonical data and checksums are on the [release pa
 
 ### Upgrade an imported Mochi deck
 
-First export your current deck from Mochi as a native `.mochi` backup. Download the new matching release file, then create and import an update package:
+Mochi does not reliably merge imported cards whose IDs already exist, including IDs held by a deck in Trash. Upgrading is therefore a backup-preserving replacement, not an in-place merge.
+
+Export a fresh native `.mochi` backup of each current deck. Download the matching vocabulary-only or kanji-only release file, then build a replacement:
 
 ```bash
-uv run flashcard-curator mochi-upgrade current-export.mochi jlpt_n5_complete.mochi --output update.mochi
+uv run flashcard-curator mochi-upgrade current-vocabulary.mochi jlpt_n5_vocabulary.mochi --output updated-vocabulary.mochi
 ```
 
-The update reuses the IDs assigned to your existing cards and changes only their content/order, so Mochi keeps their review history. It adds newly introduced cards and leaves removed cards untouched. Do not delete the existing deck; keep the native export as a backup.
+The replacement preserves the native deck/card IDs, review history, templates, metadata and attachments while updating content/order. It adds new cards, retains cards removed from the release, and removes frequency tags accidentally created by older cards.
+
+Keep the original export as a recovery backup. In Mochi, delete the old deck **and permanently remove it from Trash** to release its IDs, then import the replacement. If import fails, restore the original native backup. Repeat separately for vocabulary and kanji decks.
 
 ## Develop
 

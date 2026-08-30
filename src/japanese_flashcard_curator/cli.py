@@ -21,10 +21,11 @@ def parse_args() -> argparse.Namespace:
         if command != "fetch":
             item.add_argument("--format", action="append", choices=available_formats(), default=[])
     upgrade = subcommands.add_parser(
-        "mochi-upgrade", description="Build an in-place Mochi update without replacing review history."
+        "mochi-upgrade",
+        description="Build a native Mochi replacement while preserving review history.",
     )
-    upgrade.add_argument("existing", type=Path, help="native .mochi export of the imported deck")
-    upgrade.add_argument("release", type=Path, help="new .mochi release file")
+    upgrade.add_argument("existing", type=Path, help="fresh native .mochi backup of one deck")
+    upgrade.add_argument("release", type=Path, help="matching vocabulary-only or kanji-only release")
     upgrade.add_argument("--output", type=Path, default=Path("mochi-update.mochi"))
     return parser.parse_args()
 

@@ -177,36 +177,78 @@ class FormatTests(unittest.TestCase):
             self.assertTrue(any("top-level cards" in error for error in errors))
             self.assertTrue(any("no nested cards" in error for error in errors))
 
-    def test_mochi_upgrade_reuses_imported_ids(self):
+    def test_mochi_upgrade_builds_native_replacement_and_preserves_progress(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             existing = root / "existing.mochi"
             release = root / "release.mochi"
             update = root / "update.mochi"
-            old_content = "# 食\n\n---\n\nOld back"
-            old_card = transit_map((
-                ("id", transit_keyword("ExistingCard01")),
-                ("content", old_content),
-                ("pos", "000001"),
-            ))
-            old_deck = transit_map((
-                ("id", transit_keyword("ExistingDeck01")),
-                ("name", "JLPT N5 Kanji"),
-                ("cards", [old_card]),
-            ))
-            _write_transit_archive(
-                existing, transit_map((("version", 2), ("decks", [old_deck])))
-            )
+            native = {
+                "~:version": 2,
+                "~:schema/version": 35,
+                "~:decks": [{
+                    "~:id": "~:ExistingDeck01",
+                    "~:name": "JLPT N5 Kanji",
+                    "~:cards": {"~#list": [
+                        {
+                            "~:id": "~:ExistingCard01",
+                            "~:deck-id": "~:ExistingDeck01",
+                            "~:content": "# 食\n\n---\n\nFrequency: #328",
+                            "~:pos": "000001",
+                            "~:reviews": {"~#list": [{"~:interval": 2}]},
+                            "~:tags": {"~#set": ["328", "custom"]},
+                            "~:custom": "preserve me",
+                        },
+                        {
+                            "~:id": "~:RetainedCard02",
+                            "~:deck-id": "~:ExistingDeck01",
+                            "~:content": "# 古\n\n---\n\nRemoved from release",
+                            "~:pos": "000002",
+                            "~:reviews": {"~#list": []},
+                            "~:tags": {"~#set": []},
+                        },
+                    ]},
+                }],
+            }
+            _write_transit_archive(existing, native)
+            with zipfile.ZipFile(existing, "a") as archive:
+                archive.writestr("attachment.txt", b"preserve attachment")
             write_mochi(
                 release,
-                (("JLPT N5 Kanji", (("n5-kanji-0001", "# 食\n\n---\n\nNew back"),)),),
+                (("JLPT N5 Kanji", (
+                    ("n5-kanji-0001", "# 食\n\n---\n\nNew back"),
+                    ("n5-kanji-0003", "# 新\n\n---\n\nNew card"),
+                )),),
             )
             report = prepare_mochi_update(existing, release, update)
-            cards = read_mochi(update)["cards"]
-            self.assertEqual(report, {"updated": 1, "added": 0, "retained": 0})
+            updated = read_mochi(update)
+            cards = updated["decks"][0]["cards"]
+            self.assertEqual(
+                report,
+                {
+                    "updated": 1,
+                    "added": 1,
+                    "retained": 1,
+                    "reviews_preserved": 1,
+                    "tags_removed": 1,
+                },
+            )
+            self.assertNotIn("cards", updated)
+            self.assertEqual(updated["decks"][0]["id"], "ExistingDeck01")
             self.assertEqual(cards[0]["id"], "ExistingCard01")
-            self.assertEqual(cards[0]["deck-id"], "ExistingDeck01")
-            self.assertNotIn("reviews", cards[0])
+            self.assertEqual(cards[0]["reviews"], [{"interval": 2}])
+            self.assertEqual(cards[0]["tags"], ["custom"])
+            self.assertEqual(cards[0]["custom"], "preserve me")
+            self.assertEqual(cards[1]["id"], "RetainedCard02")
+            self.assertEqual(len(cards), 3)
+            with zipfile.ZipFile(update) as archive:
+                self.assertEqual(archive.read("attachment.txt"), b"preserve attachment")
+
+    def test_mochi_upgrade_refuses_to_overwrite_backup(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "backup.mochi"
+            with self.assertRaisesRegex(ValueError, "must not overwrite"):
+                prepare_mochi_update(path, path, path)
 
     def test_mochi_reader_supports_native_tagged_lists(self):
         with tempfile.TemporaryDirectory() as directory:

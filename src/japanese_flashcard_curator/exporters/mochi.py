@@ -135,7 +135,12 @@ def kanji_card(record: Record) -> str:
     return escape_tag_like_markdown("\n".join(lines))
 
 
-def _write_transit_archive(path: Path, payload: list[object]) -> None:
+def _write_transit_archive(
+    path: Path,
+    payload: object,
+    *,
+    attachments_from: Path | None = None,
+) -> None:
     data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
     path.parent.mkdir(parents=True, exist_ok=True)
     info = zipfile.ZipInfo("data.json", date_time=(1980, 1, 1, 0, 0, 0))
@@ -144,6 +149,11 @@ def _write_transit_archive(path: Path, payload: list[object]) -> None:
     temporary = path.with_suffix(path.suffix + ".tmp")
     with zipfile.ZipFile(temporary, "w") as archive:
         archive.writestr(info, data)
+        if attachments_from is not None:
+            with zipfile.ZipFile(attachments_from) as source:
+                for item in source.infolist():
+                    if item.filename != "data.json":
+                        archive.writestr(item, source.read(item.filename))
     temporary.replace(path)
 
 
@@ -270,21 +280,74 @@ def _front(content: str) -> str:
     return next((line[2:].strip() for line in content.splitlines() if line.startswith("# ")), "")
 
 
+def _native_decks(raw: object, source: Path) -> dict[str, tuple[dict[str, object], list[dict[str, object]]]]:
+    """Return mutable raw decks/cards from a current native Mochi export."""
+    if not isinstance(raw, dict) or raw.get("~:version") != 2:
+        raise ValueError(f"{source.name} is not a current native Mochi JSON export")
+    raw_decks = raw.get("~:decks")
+    if not isinstance(raw_decks, list):
+        raise ValueError(f"{source.name} has no native Mochi decks")
+    decks: dict[str, tuple[dict[str, object], list[dict[str, object]]]] = {}
+    for deck in raw_decks:
+        if not isinstance(deck, dict) or not isinstance(deck.get("~:name"), str):
+            raise ValueError(f"{source.name} has an unsupported native deck structure")
+        container = deck.get("~:cards")
+        cards = container.get("~#list") if isinstance(container, dict) else container
+        if not isinstance(cards, list) or any(not isinstance(card, dict) for card in cards):
+            raise ValueError(f"{source.name} has an unsupported native card structure")
+        decks[str(deck["~:name"])] = (deck, cards)
+    return decks
+
+
+def _raw_keyword(value: object) -> str:
+    return str(value).removeprefix("~:")
+
+
+def _remove_generated_frequency_tags(card: dict[str, object]) -> int:
+    old_content = str(card.get("~:content", ""))
+    generated = set(re.findall(r"Frequency(?: rank)?: #(\d+)", old_content))
+    container = card.get("~:tags")
+    tags = container.get("~#set") if isinstance(container, dict) else None
+    if not isinstance(tags, list) or not generated:
+        return 0
+    kept = [tag for tag in tags if str(tag) not in generated]
+    removed = len(tags) - len(kept)
+    tags[:] = kept
+    return removed
+
+
 def prepare_mochi_update(existing: Path, release: Path, output: Path) -> dict[str, int]:
-    """Create a native update package while retaining IDs in an imported deck."""
+    """Create a restorable native deck with new content and preserved progress."""
+    if existing.resolve() == output.resolve():
+        raise ValueError("output must not overwrite the native Mochi backup")
+    with zipfile.ZipFile(existing) as archive:
+        if "data.json" not in archive.namelist():
+            raise ValueError(f"{existing.name} has no Transit data.json")
+        raw_root = json.loads(archive.read("data.json"))
+    raw_decks = _native_decks(raw_root, existing)
     current_decks = _deck_index(read_mochi(existing))
     release_decks = _deck_index(read_mochi(release))
-    updates: list[list[object]] = []
-    matched = added = retained = 0
+    matched = added = retained = tags_removed = 0
+    reviews_before = sum(
+        len(card.get("reviews", []))
+        for deck in current_decks.values()
+        for card in deck["cards"]
+    )
 
     for name, new_deck in release_decks.items():
-        if name not in current_decks:
+        if name not in current_decks or name not in raw_decks:
             raise ValueError(f"existing export does not contain deck: {name}")
         current_deck = current_decks[name]
+        _, raw_cards = raw_decks[name]
         current_deck_id = str(current_deck.get("id", ""))
         if not current_deck_id:
             raise ValueError(f"existing deck has no Mochi ID: {name}")
         current_cards = list(current_deck["cards"])
+        raw_by_id = {
+            _raw_keyword(card.get("~:id")): card
+            for card in raw_cards
+            if card.get("~:id")
+        }
         by_id = {str(card.get("id")): card for card in current_cards if card.get("id")}
         by_pos = {str(card.get("pos")): card for card in current_cards if card.get("pos")}
         by_front: dict[str, list[dict[str, object]]] = defaultdict(list)
@@ -308,20 +371,41 @@ def prepare_mochi_update(existing: Path, release: Path, output: Path) -> dict[st
             used.add(card_id)
             matched += old is not None
             added += old is None
-            updates.append(
-                transit_map(
-                    (
-                        ("id", transit_keyword(card_id)),
-                        ("deck-id", transit_keyword(current_deck_id)),
-                        ("content", transit_string(str(new_card["content"]))),
-                        ("pos", pos),
-                    )
-                )
-            )
+            raw_card = raw_by_id.get(card_id)
+            if raw_card is None:
+                raw_card = {
+                    "~:id": transit_keyword(card_id),
+                    "~:deck-id": transit_keyword(current_deck_id),
+                    "~:content": str(new_card["content"]),
+                    "~:pos": pos,
+                    "~:reviews": {"~#list": []},
+                    "~:tags": {"~#set": []},
+                    "~:cloze/indexes": {"~#set": []},
+                    "~:references": {"~#set": []},
+                }
+                raw_cards.append(raw_card)
+            else:
+                tags_removed += _remove_generated_frequency_tags(raw_card)
+                raw_card["~:content"] = str(new_card["content"])
+                raw_card["~:pos"] = pos
         retained += sum(str(card.get("id", "")) not in used for card in current_cards)
 
-    _write_transit_archive(output, transit_map((("version", 2), ("cards", updates))))
-    return {"updated": matched, "added": added, "retained": retained}
+    _write_transit_archive(output, raw_root, attachments_from=existing)
+    updated_decks = _deck_index(read_mochi(output))
+    reviews_after = sum(
+        len(card.get("reviews", []))
+        for deck in updated_decks.values()
+        for card in deck["cards"]
+    )
+    if reviews_after != reviews_before:
+        raise AssertionError("Mochi review history changed while preparing the replacement")
+    return {
+        "updated": matched,
+        "added": added,
+        "retained": retained,
+        "reviews_preserved": reviews_after,
+        "tags_removed": tags_removed,
+    }
 
 
 class MochiExporter:
